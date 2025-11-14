@@ -27,7 +27,7 @@ Rectangle {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: SessionState.launcher.isOpen = !SessionState.launcher.isOpen
+        onClicked: SessionState.launcherOpen = true
     }
 
 }

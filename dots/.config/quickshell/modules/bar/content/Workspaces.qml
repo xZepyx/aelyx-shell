@@ -33,6 +33,11 @@ BarModule {
         implicitWidth: workspaceRow.implicitWidth + Appearance.margin.large - 2
         implicitHeight: Config.options.bar.modules.workspaces.largeWorkspacesIcon ? workspaceRow.implicitHeight + Appearance.margin.large - 8.5 : workspaceRow.implicitHeight + Appearance.margin.large - 2
 
+        MouseArea {
+            anchors.fill: parent 
+            onClicked: SessionState.overviewOpen = !SessionState.overviewOpen
+        }
+
         Row {
             id: workspaceRow
             anchors.centerIn: parent

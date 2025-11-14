@@ -2,7 +2,7 @@ import qs.core.config
 import qs.common.bin
 import qs.modules.bar
 import qs.modules.background
-import qs.modules.overview
+//import qs.modules.overview
 import qs.modules.border
 import qs.modules.launcher
 import qs.modules.powerMenu
@@ -19,6 +19,5 @@ ShellRoot {
     LauncherWindow{}
     Background{}
     GlobalProcesses{}
-    Overview{}
 
 }

@@ -287,7 +287,7 @@ PanelWindow {
 
     IpcHandler {
         target: "mediaPlayer"
-        function toggleVisible() {
+        function toggle() {
             togglemediaPlayer()
         }
     }

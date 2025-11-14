@@ -91,6 +91,7 @@ Scope {
                 Volume{}
                 Brightness{}
                 MediaPlayer{}
+                WindowOverview{}
 
             }
         }

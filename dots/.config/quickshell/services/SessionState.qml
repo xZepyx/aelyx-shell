@@ -11,5 +11,6 @@ Item {
     property bool powerMenuOpen: false
     property bool controlCenterOpen: false
     property bool mediaPlayerOpen: false
-    property bool overviewOpen: false
+    property bool windowOverviewOpen: false
+    
 }

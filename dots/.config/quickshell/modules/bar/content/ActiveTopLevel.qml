@@ -12,6 +12,11 @@ BarModule {
     Layout.alignment: Qt.AlignVCenter
     Layout.leftMargin: Appearance.margin.large
 
+    MouseArea {
+        anchors.fill: parent 
+        onClicked: SessionState.windowOverviewOpen = !SessionState.windowOverviewOpen
+    }
+
     property Toplevel activeToplevel: Hyprland.isWorkspaceOccupied(Hyprland.focusedWorkspaceId)
         ? Hyprland.activeToplevel
         : null
@@ -34,6 +39,7 @@ BarModule {
             text: shortText(activeToplevel?.title || `Workspace ${Hyprland.focusedWorkspaceId}`)
             anchors.centerIn: parent
         }
+
     }
 
     function shortText(str, len = 15) {
