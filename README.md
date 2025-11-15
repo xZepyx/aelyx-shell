@@ -35,7 +35,7 @@ Target users: developers and linux users who prefer script-first shell configura
 
 | Desktop                                          | Launcher                                           |
 | ------------------------------------------------ | -------------------------------------------------- |
-| ![Widgets](previews/1.png) | ![Launcher](previews/4.png) |
+| ![Widgets](previews/1.png) | ![Launcher](previews/2.png) |
 
 ---
 

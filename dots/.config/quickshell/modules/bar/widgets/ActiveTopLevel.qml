@@ -1,5 +1,6 @@
 import qs.core.appearance
 import qs.common.widgets
+import qs.common.functions
 import qs.services
 import qs.modules.bar
 import QtQuick
@@ -36,15 +37,9 @@ BarModule {
         StyledText {
             id: textItem
             animate: true
-            text: shortText(activeToplevel?.title || `Workspace ${Hyprland.focusedWorkspaceId}`)
+            text: Stringify.shortText(activeToplevel?.title || `Workspace ${Hyprland.focusedWorkspaceId}`)
             anchors.centerIn: parent
         }
 
-    }
-
-    function shortText(str, len = 15) {
-        if (!str)
-            return ""
-        return str.length > len ? str.slice(0, len) + "…" : str
     }
 }

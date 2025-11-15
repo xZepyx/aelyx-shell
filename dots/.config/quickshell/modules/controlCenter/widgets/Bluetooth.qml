@@ -5,7 +5,6 @@ import qs.services
 import QtQuick
 import Quickshell
 import Quickshell.Io
-import Quickshell.Bluetooth
 import QtQuick.Layouts
 
 StyledRect {
@@ -15,11 +14,9 @@ StyledRect {
     radius: Appearance.rounding.verylarge
 
     // Enabled = BT adapter on
-    property bool btEnabled: Bluetooth.defaultAdapter
-                             ? Bluetooth.defaultAdapter.enabled
-                             : false
+    property bool btEnabled: Bluetooth.enabled
 
-    readonly property string btstatustext: btEnabled ? "Enabled" : "Disabled"
+    readonly property string btstatustext: btEnabled ? Bluetooth.connectedDeviceId : "Disabled"
     property string btstatusicon: btEnabled ? "bluetooth" : "bluetooth_disabled"
 
     // Match Network & Theme tile colors
@@ -40,7 +37,7 @@ StyledRect {
         command: []
 
         function toggle() {
-            const adapter = Bluetooth.defaultAdapter;
+            const adapter = Bluetooth.adapter;
             if (!adapter) {
                 adapterWarn.running = true;
                 return;

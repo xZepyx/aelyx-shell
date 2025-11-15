@@ -32,14 +32,8 @@ BarModule {
         StyledText {
             id: textItem
             animate: true
-            text: shortText(container.userHostname)
+            text: container.userHostname
             anchors.centerIn: parent
         }
-    }
-
-    function shortText(str, len = 30) {
-        if (!str)
-            return ""
-        return str.length > len ? str.slice(0, len) + "…" : str
     }
 }

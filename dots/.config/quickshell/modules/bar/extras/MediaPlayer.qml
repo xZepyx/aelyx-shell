@@ -1,6 +1,7 @@
 import qs.core.appearance
 import qs.core.config
 import qs.common.widgets
+import qs.common.functions
 import qs.services
 import QtQuick
 import Quickshell
@@ -37,12 +38,6 @@ PanelWindow {
         left: true
         right: true
         bottom: true
-    }
-
-    function shortText(str, len = 25) {
-        if (!str)
-            return ""
-        return str.length > len ? str.slice(0, len) + "" : str
     }
 
     component Anim: NumberAnimation {
@@ -158,7 +153,7 @@ PanelWindow {
 
                 StyledText {
                     id: albumTitle
-                    text: shortText(Mpris.albumTitle)
+                    text: Stringify.shortText(Mpris.albumTitle)
                     horizontalAlignment: Text.AlignLeft
                     Layout.fillWidth: true
                     font.family: "Pacifico"
@@ -166,50 +161,23 @@ PanelWindow {
 
                 StyledText {
                     id: albumArtist
-                    text: shortText(Mpris.albumArtist)
+                    text: Stringify.shortText(Mpris.albumArtist)
                     font.family: "Pacifico"
                     horizontalAlignment: Text.AlignLeft
                     Layout.fillWidth: true
                 }
 
-                Slider {
+                StyledSlider {
                     id: lengthSlider
                     Layout.fillWidth: true
-                    Layout.bottomMargin: -30
+                    Layout.preferredHeight: 30
+                    Layout.bottomMargin: -Appearance.margin.verylarge 
                     from: 0
                     to: Mpris.lengthSec
                     value: Mpris.positionSec
                     stepSize: 0.1
 
                     onMoved: seekProcess.running = true
-
-                    background: Rectangle {
-                        x: lengthSlider.leftPadding
-                        y: lengthSlider.topPadding + lengthSlider.availableHeight / 2 - height / 2
-                        implicitWidth: 200
-                        implicitHeight: 10
-                        width: lengthSlider.availableWidth
-                        height: implicitHeight
-                        radius: 8
-                        color: Appearance.m3colors.m3primaryContainer
-
-                        Rectangle {
-                            width: lengthSlider.visualPosition * parent.width
-                            height: parent.height
-                            color: Appearance.m3colors.m3surfaceTint
-                            radius: 8
-                        }
-                    }
-
-                    handle: Rectangle {
-                        x: lengthSlider.leftPadding + lengthSlider.visualPosition * (lengthSlider.availableWidth - width)
-                        y: lengthSlider.topPadding + lengthSlider.availableHeight / 2 - height / 2
-                        implicitWidth: 0
-                        implicitHeight: 0
-                        radius: 13
-                        color: lengthSlider.pressed ? "#ffe082" : "#f6f6f6"
-                        border.color: "#bdbebf"
-                    }
                 }
             }
 
@@ -251,6 +219,11 @@ PanelWindow {
                     Process {
                         id: toggleProcess
                         command: ["playerctl", "play-pause"]
+                    }
+
+                    Process {
+                        id: seekProcess
+                        command: ["playerctl", "position", lengthSlider.value.toString()]
                     }
 
                     Process {

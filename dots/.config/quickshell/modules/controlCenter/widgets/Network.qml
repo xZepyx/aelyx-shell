@@ -92,7 +92,7 @@ StyledRect {
 
         StyledText {
             text: networkstatustext
-            font.pixelSize: 10
+            font.pixelSize: Appearance.font.size.small
         }
     }
 

@@ -2,6 +2,7 @@ import qs.core.appearance
 import qs.core.config
 import qs.services
 import qs.common.widgets
+import qs.common.functions
 import qs.modules.bar
 import QtQuick
 import Quickshell
@@ -69,7 +70,7 @@ BarModule {
         // MPRIS Album Title
         StyledText {
             id: textItem
-            text: shortText(Mpris.albumTitle)          
+            text: Stringify.shortText(Mpris.albumTitle)          
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset: 0.2
             
@@ -100,9 +101,5 @@ BarModule {
             repeat: true
             onTriggered: updateStatusProcess.running = true
         }
-    }
-
-    function shortText(str, len = 20) {
-        return !str ? "" : str.length > len ? str.slice(0, len) + "…" : str
     }
 }

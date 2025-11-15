@@ -49,7 +49,7 @@ Rectangle {
 
         StyledText {
             text: themestatustext
-            font.pixelSize: 10
+            font.pixelSize: Appearance.font.size.small
         }
     }
 

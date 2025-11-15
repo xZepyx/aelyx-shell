@@ -1,6 +1,7 @@
 import qs.core.appearance
 import qs.core.config
 import qs.common.widgets
+import qs.common.functions
 import qs.services
 import QtQuick
 import Quickshell
@@ -41,12 +42,6 @@ PanelWindow {
         left: true
         right: true
         bottom: true
-    }
-
-    function shortText(str, len = 25) {
-        if (!str)
-            return ""
-        return str.length > len ? str.slice(0, len) + "" : str
     }
 
     component Anim: NumberAnimation {
@@ -150,7 +145,7 @@ PanelWindow {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     z: 1                       
-                    text: shortText(activeToplevel?.title || `Workspace ${Hyprland.focusedWorkspaceId}`)
+                    text: Stringify.shortText(activeToplevel?.title || `Workspace ${Hyprland.focusedWorkspaceId}`)
                 }
 
                 ScreencopyView {
