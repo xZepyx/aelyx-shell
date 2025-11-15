@@ -29,5 +29,8 @@ StyledSlider {
     property var sink: Pipewire.defaultAudioSink?.audio
 
 
-    onMoved: if (sink) sink.volume = value
+    onMoved: { 
+        if (sink) sink.volume = value
+        SessionState.osdNeeded = false;
+    }
 }

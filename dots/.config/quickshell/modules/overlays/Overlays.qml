@@ -4,4 +4,5 @@ import Quickshell
 Scope {
     id: root 
     VolumeOsd{}
+    BrightnessOsd{}
 }

@@ -24,6 +24,7 @@ StyledSlider {
     property real level: brightnessSlider.value * 100
 
     onMoved: if (monitor) {
+        SessionState.osdNeeded = false;
         monitor.setBrightness(value);
     }
 }

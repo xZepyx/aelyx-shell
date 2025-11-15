@@ -12,5 +12,6 @@ Item {
     property bool controlCenterOpen: false
     property bool mediaPlayerOpen: false
     property bool windowOverviewOpen: false
+    property bool osdNeeded: false
     
 }

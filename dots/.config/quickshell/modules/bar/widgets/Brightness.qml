@@ -29,6 +29,7 @@ BarModule {
             scrollGestureEnabled: true
 
             onWheel: (wheelEvent) => {
+                SessionState.osdNeeded = true;
                 const step = 0.05
                 if (wheelEvent.angleDelta.y > 0) {
                     Brightness.increaseBrightness()

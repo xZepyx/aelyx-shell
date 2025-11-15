@@ -48,6 +48,7 @@ BarModule {
                     return
 
                 const step = 0.01
+                SessionState.osdNeeded = true;
 
                 if (wheelEvent.angleDelta.y > 0) {
                     sink.volume = Math.min(sink.volume + step, 1)

@@ -42,27 +42,25 @@ Scope {
 		active: root.shouldShowOsd
 
 		PanelWindow {
+			visible: SessionState.osdNeeded
+			exclusiveZone: 0
 			anchors.top: Config.options.bar.position === 1
-			margins.top: Config.options.bar.position === 1 === 'top' ? 10 : 0
+			margins.top: Config.options.bar.position === 1 ? 10 : 0
 
             anchors.bottom: Config.options.bar.position === 2 
 			margins.bottom: Config.options.bar.position === 2 ? 10 : 0
 
-			anchors.right: true
-			margins.right: 20
-
 
 			implicitWidth: 400
 			implicitHeight: 70
-			color: 'transparent'
+			color: "transparent"
 
 			mask: Region {}
 
 			Rectangle {
 				anchors.fill: parent
 				radius: 20
-				color: Appearance.m3colors.m3paddingContainer
-
+				color: Appearance.m3colors.m3onSecondary
 
 				RowLayout {
 					spacing: 10
@@ -86,6 +84,7 @@ Scope {
 						spacing: 5
 
 						StyledText {
+							animate: false
 							text: Pipewire.defaultAudioSink?.description + " - " + (Pipewire.defaultAudioSink?.audio.muted ? 'Muted' : Math.floor(Pipewire.defaultAudioSink?.audio.volume*100) + '%')
 							font.pixelSize: 16
 						}
