@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtCore 
 import Quickshell
 import Quickshell.Widgets
+import QtQuick.Effects
 
 Item {
     Layout.fillHeight: true 
@@ -40,6 +41,13 @@ Item {
             smooth: true
             Layout.alignment: Qt.AlignHCenter
             scale: 1.0
+
+            MultiEffect {
+                anchors.fill: icon
+                source: icon
+                colorization: Config.options.appearance.theme === "light" ? 1.0 : 0.0
+                colorizationColor: "black"
+            }
 
             Behavior on scale {
                 SpringAnimation {
