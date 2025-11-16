@@ -1,6 +1,4 @@
-import qs.core.config
-import qs.core.appearance
-import qs.common.widgets
+import qs.config
 import QtQuick
 import QtQuick.Controls
 

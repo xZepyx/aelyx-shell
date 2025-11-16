@@ -1,13 +1,13 @@
 pragma ComponentBehavior: Bound
 
+import qs.config
 import QtQuick
 import QtQuick.Controls
-import qs.core.appearance
 
 TextField {
-  placeholderTextColor: Appearance.m3colors.m3outline
+  placeholderTextColor: Appearance.syntaxHighlightingTheme
   font.family: Appearance.font.family.main
-  color: Appearance.m3colors.m3onSecondary
+  color: Appearance.syntaxHighlightingTheme
 
   cursorDelegate: StyledRect {
     id: cursor

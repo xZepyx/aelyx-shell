@@ -1,7 +1,6 @@
-import qs.core.appearance
-import qs.core.config
+import qs.config
 import qs.services
-import qs.common.widgets
+import qs.widgets
 import qs.modules.bar
 import QtQuick
 import Quickshell

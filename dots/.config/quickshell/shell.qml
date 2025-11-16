@@ -1,20 +1,19 @@
-import qs.core.config
-import qs.common.bin
+import qs.bin
 import qs.modules.bar
 import qs.modules.background
 import qs.modules.controlCenter
 import qs.modules.border
 import qs.modules.launcher
-import qs.modules.settings 
 import qs.modules.overlays
 import qs.modules.powerMenu
+
 import QtQuick
 import Quickshell
 import Quickshell.Io
 
 ShellRoot {
 
-    // Initiate Modules
+    // Initiate shell
     BorderWindow {}
     Bar {}
     PowerMenu{}
@@ -23,6 +22,5 @@ ShellRoot {
     GlobalProcesses{}
     ControlCenter{}
     Overlays{}
-    Settings{}
 
 }

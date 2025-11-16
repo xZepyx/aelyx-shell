@@ -1,4 +1,4 @@
-import qs.core.appearance
+import qs.config
 import QtQuick
 
 Rectangle {

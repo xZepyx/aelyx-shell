@@ -1,4 +1,3 @@
-// SessionState.qml
 import QtQuick
 pragma Singleton
 pragma ComponentBehavior: Bound

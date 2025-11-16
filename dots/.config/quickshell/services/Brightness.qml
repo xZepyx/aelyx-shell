@@ -1,9 +1,6 @@
 pragma Singleton
 pragma ComponentBehavior: Bound
 
-// Fixed version of brightness service
-
-import qs.core.appearance
 import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland

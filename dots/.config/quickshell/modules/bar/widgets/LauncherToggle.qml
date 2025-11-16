@@ -1,11 +1,9 @@
+import qs.config
+import qs.widgets
+import qs.services
 import QtQuick 
 import Quickshell
 import QtQuick.Layouts
-import qs.services
-import qs.core.config
-import qs.core.appearance
-import qs.common.widgets 
-
 
 Rectangle {
     id: bgRect

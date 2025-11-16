@@ -1,4 +1,4 @@
-import qs.core.config
+import qs.config
 import QtQuick
 import Quickshell
 import Quickshell.Io 

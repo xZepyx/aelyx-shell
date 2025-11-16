@@ -1,7 +1,6 @@
+import qs.functions 
+import qs.config
 import QtQuick
-import "."
-import qs.common.functions 
-import qs.core.appearance
 
 Item {
     id: root

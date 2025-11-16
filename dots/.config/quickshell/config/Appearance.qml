@@ -1,5 +1,4 @@
-import qs.core.config
-import qs.common.functions
+import qs.functions
 import QtQuick
 import Quickshell
 pragma Singleton

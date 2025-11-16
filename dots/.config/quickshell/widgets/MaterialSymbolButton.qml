@@ -1,7 +1,5 @@
-// MaterialSymbolButton.qml
 import QtQuick
-import qs.common.widgets
-import qs.core.appearance
+import qs.config
 
 MaterialSymbol {
     id: root

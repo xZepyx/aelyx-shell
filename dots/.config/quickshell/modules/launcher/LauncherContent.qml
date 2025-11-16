@@ -1,13 +1,11 @@
-import qs.core.config
-import qs.core.appearance
-import qs.common.widgets
+import qs.config
+import qs.widgets
 import qs.services
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import Quickshell
 import Quickshell.Io
-import "."
 
 Item {
     id: content
@@ -29,7 +27,7 @@ Item {
 
     Process {
         id: appLoader
-        command: ["bash", "-c", "bash \"$HOME/.config/quickshell/scripts/finders/find-apps.sh\""]
+        command: ["bash", "-c", "bash \"$HOME/.config/quickshell/bin/finders/find-apps.sh\""]
         stdout: SplitParser {
             onRead: data => {
                 const lines = data.split("\n")

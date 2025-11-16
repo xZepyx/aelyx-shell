@@ -1,4 +1,4 @@
-import qs.core.appearance
+import qs.config
 pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Controls

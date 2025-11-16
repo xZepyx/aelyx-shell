@@ -1,6 +1,5 @@
 pragma ComponentBehavior: Bound
-
-import qs.core.appearance
+import qs.config
 import QtQuick
 
 Text {

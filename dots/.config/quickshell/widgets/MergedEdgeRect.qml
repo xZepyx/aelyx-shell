@@ -1,3 +1,4 @@
+import qs.config
 import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland
@@ -7,8 +8,6 @@ import QtQuick.Shapes
 import QtQuick.Layouts
 import QtQuick
 import QtQuick.Shapes
-import qs.core.config 
-import qs.core.appearance
 
 Item {
   id: root

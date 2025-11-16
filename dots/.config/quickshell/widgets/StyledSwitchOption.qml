@@ -1,5 +1,4 @@
-import qs.core.config
-import qs.core.appearance
+import qs.config
 import Quickshell
 import QtQuick
 import QtQuick.Layouts

@@ -1,6 +1,5 @@
-import qs.core.appearance
-import qs.core.config
-import qs.common.widgets
+import qs.config
+import qs.widgets
 import qs.services
 import qs.modules.controlCenter.widgets
 import QtQuick
@@ -160,6 +159,8 @@ PanelWindow {
                             }
                         }
                     }
+
+                    Item { Layout.fillWidth: true }
 
                     Column {
                         spacing: 6
