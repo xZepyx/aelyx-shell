@@ -5,6 +5,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Io
 import QtQuick.Layouts
+import Quickshell.Bluetooth
 
 StyledRect {
     id: root
@@ -13,9 +14,30 @@ StyledRect {
     radius: Appearance.rounding.verylarge
 
     // Enabled = BT adapter on
-    property bool btEnabled: Bluetooth.enabled
+    property bool btEnabled: Bluetooth.defaultAdapter ? Bluetooth.defaultAdapter.enabled : false
+    property string btState: btEnabled ? "Enabled" : "Disabled"
+    property string connectedDeviceId: "Connected"
 
-    readonly property string btstatustext: btEnabled ? Bluetooth.connectedDeviceId : "Disabled"
+    Timer {
+        interval: 10000
+        repeat: true 
+        running: true 
+        onTriggered: btNameProc.running = true
+    }
+
+    Process {
+        id: btNameProc
+        running: true
+        command: ["sh", "-c", "bluetoothctl info | grep 'Name' | awk -F ': ' '{print $2}'"]
+        stdout: StdioCollector {
+            onStreamFinished: {
+                var deviceName = text.trim()
+                root.connectedDeviceId = deviceName
+            }
+        }
+    }
+
+    readonly property string btstatustext: (btEnabled && connectedDeviceId != "") ? connectedDeviceId : btState
     property string btstatusicon: btEnabled ? "bluetooth" : "bluetooth_disabled"
 
     // Match Network & Theme tile colors
@@ -30,22 +52,16 @@ StyledRect {
         command: ["notify-send", "No Bluetooth adapter found!"]
     }
 
-    Process {
-        id: togglebtProc
-        running: false
-        command: []
-
-        function toggle() {
-            const adapter = Bluetooth.adapter;
-            if (!adapter) {
-                adapterWarn.running = true;
-                return;
-            }
-
-            adapter.enabled = !adapter.enabled;
-            btEnabled = adapter.enabled;
+    function toggleBluetooth() {
+        const adapter = Bluetooth.defaultAdapter;
+        if (!adapter) {
+            adapterWarn.running = true;
+            return;
         }
+        adapter.enabled = !adapter.enabled;
+        btEnabled = adapter.enabled;
     }
+
 
     // --- Icon Circle ---
     StyledRect {
@@ -56,16 +72,7 @@ StyledRect {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: Appearance.margin.small
-        color: root.color   // SAME as parent for unified look
-
-        MouseArea {
-            anchors.fill: parent
-            hoverEnabled: true
-            onClicked: togglebtProc.toggle()
-
-            onEntered: root.btstatusicon = "settings_bluetooth"
-            onExited: root.btstatusicon = btEnabled ? "bluetooth" : "bluetooth_disabled"
-        }
+        color: root.color  
 
         MaterialSymbol {
             anchors.centerIn: parent
@@ -91,9 +98,8 @@ StyledRect {
         }
     }
 
-    // Whole tile toggle
     MouseArea {
         anchors.fill: parent
-        onClicked: togglebtProc.toggle()
+        onClicked: toggleBluetooth()
     }
 }

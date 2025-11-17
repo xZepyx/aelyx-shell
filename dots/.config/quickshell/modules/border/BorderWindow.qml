@@ -57,18 +57,18 @@ PanelWindow {
         anchors.topMargin: (Config.options.bar.style === 2)
             ? (Config.options.bar.position === 2
                 ? Appearance.margin.normal - 2
-                : 1)    // Hugged + Top   
+                : 1)    // Top   
             : (Config.options.bar.style === 1 && Config.options.bar.position === 0)
                 ? Appearance.margin.verysmall   // lowered margin when top in style 1
-                : 0
+                : Appearance.margin.verysmall
 
         anchors.bottomMargin: (Config.options.bar.style === 2)
             ? (Config.options.bar.position === 1
                 ? Appearance.margin.normal - 2  
-                : 1)   // Hugged + Bottom
+                : 0)   //  Bottom
             : (Config.options.bar.style === 1 && Config.options.bar.position === 1)
                 ? Appearance.margin.small
-                : 0
+                : Appearance.margin.verysmall
 
         radius: Appearance.rounding.normal
       }

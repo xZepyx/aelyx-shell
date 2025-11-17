@@ -99,6 +99,10 @@ Singleton {
                 }
             }
 
+            property JsonObject misc: JsonObject {
+                property bool notificationDaemonEnabled: true
+            }
+            
             property JsonObject global: JsonObject {
                 property string colorScheme: "scheme-rainbow"
                 property url pfp: StandardPaths.writableLocation(StandardPaths.ConfigLocation) + "/quickshell/defaults/user/pfp.jpg"

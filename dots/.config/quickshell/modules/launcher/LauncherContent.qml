@@ -38,7 +38,7 @@ Item {
                     if (parts.length >= 4) {
                         const rawName = parts[0].trim()
                         const isCustom = rawName.startsWith("?")
-                        const displayName = isCustom ? rawName.slice(1) : rawName  // strip ? for UI
+                        const displayName = isCustom ? rawName.slice(1) : rawName  // strip "?" for UI
 
                         appModel.append({
                             name: rawName,          // keep for logic

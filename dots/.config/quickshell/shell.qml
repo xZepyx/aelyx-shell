@@ -6,6 +6,7 @@ import qs.modules.border
 import qs.modules.launcher
 import qs.modules.overlays
 import qs.modules.powerMenu
+import qs.modules.notifications
 import qs.modules.settings
 import QtQuick
 import Quickshell
@@ -23,5 +24,6 @@ ShellRoot {
     ControlCenter{}
     Overlays{}
     Settings{}
+    Notification{}
 
 }
