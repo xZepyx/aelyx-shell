@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/aelyx-logo.jpeg" />
+<img src="assets/aelyx-logo.png" width="550" height="380" />
 
 A compact, performance-oriented dotfiles collection implemented with QuickShell and Hyprland.
 
