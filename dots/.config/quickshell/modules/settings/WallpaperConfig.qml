@@ -19,45 +19,54 @@ ContentMenu {
     }
 
     ContentCard {
-        StyledText {
-            text: "Current Wallpaper:"
-            font.pixelSize: 20
-            font.bold: true
-        }
-
-        StyledRect {
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
-            id: wpPreview
-            width: 960
-            height: 640
-            radius: 12
-            color: Appearance.m3colors.m3paddingContainer
-            layer.enabled: true
-            layer.effect: OpacityMask {
-                maskSource: Rectangle {
-                    width: wpPreview.width
-                    height: wpPreview.height
-                    radius: wpPreview.radius
-                }
-            }
+        ClippingRectangle {
+            id: wpContainer
+            Layout.alignment: Qt.AlignHCenter
+            width: root.screen.width / 2
+            height: width * root.screen.height / root.screen.width
+            radius: 10
+            color: Appearance.colors.m3surfaceContainer
 
             StyledText {
-                opacity: !Config.options.background.wallpaperEnabled ? 1 : 0
-                Behavior on opacity { Anim {} }
-                font.pixelSize: Appearance.font.size.title
-                text: "Wallpaper Manager Disabled"
-                anchors.centerIn: parent
+                text: "Current Wallpaper:"
+                font.pixelSize: 20
+                font.bold: true
             }
-            Image {
-                opacity: Config.options.background.wallpaperEnabled ? 1 : 0
-                Behavior on opacity { Anim {} }
+
+            StyledRect {
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignCenter
+                id: wpPreview
                 anchors.fill: parent
-                source: Config.options.background.wallpaperPath
-                fillMode: Image.PreserveAspectCrop
-                cache: true
-                opacity: 0.9
+                radius: 12
+                color: Appearance.m3colors.m3paddingContainer
+                layer.enabled: true
+                layer.effect: OpacityMask {
+                    maskSource: Rectangle {
+                        width: wpPreview.width
+                        height: wpPreview.height
+                        radius: wpPreview.radius
+                    }
+                }
+
+                StyledText {
+                    opacity: !Config.options.background.wallpaperEnabled ? 1 : 0
+                    Behavior on opacity { Anim {} }
+                    font.pixelSize: Appearance.font.size.title
+                    text: "Wallpaper Manager Disabled"
+                    anchors.centerIn: parent
+                }
+                Image {
+                    opacity: Config.options.background.wallpaperEnabled ? 1 : 0
+                    Behavior on opacity { Anim {} }
+                    anchors.fill: parent
+                    source: Config.options.background.wallpaperPath
+                    fillMode: Image.PreserveAspectCrop
+                    cache: true
+                    opacity: 0.9
+                }
             }
         }
+
 
         StyledButton {
             icon: "wallpaper"

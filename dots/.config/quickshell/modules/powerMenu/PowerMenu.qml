@@ -143,8 +143,6 @@ PanelWindow {
         anchors {
             horizontalCenter: parent.horizontalCenter
             verticalCenter: parent.verticalCenter
-            topMargin: 8 
-            bottomMargin: 8
         }
 
         states: [

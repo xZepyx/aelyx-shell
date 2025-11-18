@@ -86,8 +86,6 @@ PanelWindow {
             rightMargin: Config.options.background.borderEnabled ? Appearance.margin.tiny + 2 : 0
             horizontalCenter: parent.horizontalCenter
             verticalCenter: parent.verticalCenter
-            topMargin: 8
-            bottomMargin: 8
         }
 
         states: [

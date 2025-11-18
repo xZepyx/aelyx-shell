@@ -44,7 +44,7 @@ Scope {
             property var menuModel: [
                 // header
                 { header: true, label: "Customization" },
-                { icon: "contrast", label: "Appearance", page: 0 },
+                { icon: "imagesearch_roller", label: "Appearance", page: 0 },
                 { icon: "instant_mix", label: "Interface", page: 1},
                 { icon: "wallpaper", label: "Wallpapers", page: 2},
                 { icon: "build", label: "Misc", page: 3},
