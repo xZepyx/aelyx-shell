@@ -20,6 +20,7 @@ packages=(
     "nautilus"
     "quickshell"
     "nerd-fonts"
+    "starship"
     "kitty"
     "xdg-desktop-portal-hyprland"
     "qt5-wayland"
@@ -33,6 +34,7 @@ packages=(
     "vim"
     "fastfetch"
     "ttf-fira-sans" 
+    "fish"
     "ttf-fira-code" 
     "ttf-firacode-nerd"
     "jq"
@@ -146,5 +148,6 @@ _installPackages "${packages[@]}"
 # ----------------------------------------------------------
 
 echo ":: All dependencies installed successfully."
-echo ":: You can now use the aelyxshell!"
+echo ":: Make sure to switch your default shell to fish by running: chsh -s /usr/bin/fish"
+echo ":: You can now reboot and log into hyprland to use aelyxshell!"
 

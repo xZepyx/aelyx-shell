@@ -1,90 +1,64 @@
-add_newline = false
-command_timeout = 1000
-
 format = """
-$character\
-[](fg:white bg:bright-black)\
-[█](fg:bright-black bg:black)\
+[░▒▓](#a3aed2)\
+[ 󰣇 ](bg:#a3aed2 fg:#090c0c)\
+[](bg:#769ff0 fg:#a3aed2)\
 $directory\
-[█](fg:bright-black bg:black)\
-[$git_branch\
-$git_state\
-$git_status](bold bg:black fg:white)\
-$fill\
-$cmd_duration\
-[](fg:red bg:black)\
-[ ](fg:black bg:red)\
-$username\
-[](fg:green bg:bright-black)\
-[󰌽 ](fg:green bg:black inverted)\
-$hostname\
-$line_break\
-[‎]()"""
-
-[character]
-format = "$symbol"
-error_symbol = "[█](fg:red bg:black)[ ERROR](fg:red bg:black inverted bold)[](fg:red bg:white)"
-success_symbol = "[█](fg:bright-white bg:black)[ PROMPT](fg:bright-white bg:black inverted bold)[](fg:bright-white bg:white)"
-
-[fill]
-symbol = ' '
-style = 'bg:black'
-
-[package]
-disabled = false
-
-[cmd_duration]
-min_time = 1000
-show_milliseconds = false
-disabled = false
-format="[󰞌 $duration ]($style)"
-style="bold bg:black"
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260 bg:#212736)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#212736 bg:#1d2230)\
+$time\
+[ ](fg:#1d2230)\
+\n$character"""
 
 [directory]
-truncation_length = 5
-format = "[󰉋 $path]($style)[$lock_symbol]($lock_style)"
-style = "bold fg:bright-white bg:bright-black"
-read_only = "🔒"
-read_only_style= "bold white"
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
 
-[username]
-show_always = true
-style_user = "bg:bright-black"
-style_root = "bg:bright-black"
-format = '[ $user ]($style)'
-
-[hostname]
-format = "[ $hostname ]($style)"
-ssh_only = false
-trim_at = ".companyname.com"
-disabled = false
-style = "fg:green bg:bright-black"
-
-[git_commit]
-commit_hash_length = 8
-style = "bold white"
-
-[status]
-style = "bg:transparent"
-symbol = "💥 "
-format = '($style)'
-disabled = false
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 
 [git_branch]
-format = " 󰘬 $branch"
-style = "bold fg:bright-black bg:black"
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
 
 [git_status]
-format = " $conflicted$untracked$modified$staged$renamed$deleted$ahead_behind$stashed"
-style = "cyan"
-conflicted = ""
-untracked = ""
-modified = ""
-staged = ""
-renamed = ""
-deleted = ""
-stashed = "≡"
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "cyan"
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
