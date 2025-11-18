@@ -6,7 +6,6 @@ import QtQuick
 import Quickshell
 import QtQuick.Layouts
 
-
 Scope {
     id: root
 
@@ -55,11 +54,11 @@ Scope {
                     anchors.centerIn: parent
                     spacing: 4
 
-                    LauncherToggle{}
-                    Workspaces{}
-                    UserHostname{}
-                    Network{}
-                    PowerMenuToggle{}
+                    LauncherToggle {}
+                    Workspaces {}
+                    UserHostname {}
+                    Network {}
+                    PowerMenuToggle {}
                 }
 
                 RowLayout {
@@ -68,8 +67,9 @@ Scope {
                     anchors.right: parent.right
                     spacing: 8
 
-                    Media{}
-                    BluetoothWifi{}
+                    SystemTray {}
+                    Media {}
+                    BluetoothWifi {}
                 }
 
                 RowLayout {
@@ -78,14 +78,14 @@ Scope {
                     anchors.left: parent.left
                     spacing: 8
 
-                    ActiveTopLevel{}
-                    Clock{}
+                    ActiveTopLevel {}
+                    Clock {}
                 }
 
-                Volume{}
-                Brightness{}
-                MediaPlayer{}
-                WindowOverview{}
+                Volume {}
+                Brightness {}
+                MediaPlayer {}
+                WindowOverview {}
             }
         }
     }
