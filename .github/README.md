@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/aelyx-logo.png" width="550" height="380" />
+<img src="/assets/aelyx-logo.png" width="550" height="380" />
 
 <p>
   <img src="https://img.shields.io/github/last-commit/xZepyx/aelyx-shell?style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B" alt="Last Commit" />
@@ -42,7 +42,7 @@ Target users: developers and linux users who prefer script-first shell configura
 
 ---
 
-## Installation (recommended)
+## Automated Installation (recommended)
 
 1. Clone the repository:
     ```bash
@@ -53,17 +53,12 @@ Target users: developers and linux users who prefer script-first shell configura
 2. Review configuration and optional modules:
     - Inspect `dots/` and `dots-extra/` before applying changes to your profile.
 
-3. Run the bootstrap script (install dependencies):
+3. Run the install script (install dependencies):
     ```bash
-    bash bootstrap.sh
+    cd setup && bash install.sh
     ```
 
-4. Copy config files and make config folders (Make sure you're in the clone repo dir):
-    ```bash
-    mkdir -p ~/.config && mkdir -p ~/.local/aelyx && cp -r dots/.config/* ~/.config/* && cp -r dots/.local/aelyx/* ~/.local/aelyx/*
-    ```
-
-5. Reload your shell or start a new session
+4. Reload your shell or start a new session
 
 Notes:
 - The bootstrap script is intentionally conservative.
