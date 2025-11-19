@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="/assets/aelyx-logo.png" width="550" height="380" />
+# ✦ Nucleus Shell ✦
 
 <p>
   <img src="https://img.shields.io/github/last-commit/xZepyx/aelyx-shell?style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B" alt="Last Commit" />
@@ -16,33 +16,59 @@
 
 ---
 
-## Overview
+<div align="center">
+  
+## ✦ Overview ✦
 
-aelyx-shell is a set of shell dotfiles and utility scripts authored in QuickShell. The collection emphasizes:
+</div>
 
-Target users: developers and linux users who prefer script-first shell configurations.
+nucleus-shell (previously aelyx-shell) a quickshell configuration built for clarity, speed, and a smooth, cohesive hyprland experience.
+
+Key goals:
+- Minimal, script-centric configuration
+- Easy to review and selectively apply
+- Composable modules for prompts, completions, and UI widgets
 
 ---
 
-## Previews
+<div align="center">
+  
+## ✦ Previews ✦
+
+</div>
+
+<div align="center">
 
 | Desktop                                          | Launcher                                           |
-| ------------------------------------------------ | -------------------------------------------------- |
-| ![Widgets](previews/1.png) | ![Launcher](previews/2.png) |
+|--------------------------------------------------|----------------------------------------------------|
+| ![Widgets](previews/1.png)                       | ![Launcher](previews/2.png)                        |
+
+</div>
 
 ---
 
-## Repository layout
+<div align="center">
+  
+## ✦ Repository layout ✦
 
-- /dots/           — Main shell dotfiles
-- /dots-extra/     — Extra dotfiles and wallpapers
-- /license/        — License details
-- /previews/       — Example previews
-- bootstrap.sh     — Dependency installation script
+</div>
+
+- /dots/           — Primary shell dotfiles (core modules)
+- /dots-extra/     — Optional dotfiles, themes, and wallpapers
+- /license/        — License and contributing docs
+- /previews/       — Example screenshots used in this README
+- setup/           — Installer scripts and bootstrap utilities
+- bootstrap.sh     — High-level dependency installer
 
 ---
 
-## Automated Installation (recommended)
+<div align="center">
+  
+## ✦ Installation (automatic recommended) ✦
+
+</div>
+
+Follow these steps to install the collection. The automated setup is conservative and will prompt before making destructive changes.
 
 1. Clone the repository:
     ```bash
@@ -50,79 +76,123 @@ Target users: developers and linux users who prefer script-first shell configura
     cd ~/.aelyx-shell
     ```
 
-2. Review configuration and optional modules:
-    - Inspect `dots/` and `dots-extra/` before applying changes to your profile.
+2. Inspect configuration and optional modules:
+    - Review files in `dots/` and `dots-extra/` before applying anything to your profile.
 
-3. Run the install script (install dependencies):
+3. Run the installer:
     ```bash
     cd setup && bash install.sh
     ```
+    - The installer will guide you through dependency checks and optional modules.
 
-4. Reload your shell or start a new session
+4. Open a fresh shell session or source your shell profile to apply changes.
 
 Notes:
-- The bootstrap script is intentionally conservative.
 - Manual installation (symlinking files yourself) is supported and recommended for cautious users.
+- Back up your existing dotfiles (e.g. ~/.bashrc, ~/.zshrc, ~/.profile) before running the bootstrap.
 
 ---
 
-## Configuration and customization
+<div align="center">
+  
+## ✦ Configuration & customization ✦
 
-- Configure the shell by editing `~/.config/aelyxshell/config.json` or using the builtin settings app..
-- Prompt and completion settings are separated into dedicated modules for easy replacement.
+</div>
 
----
-
-## Recommended environment
-
-- Shell: QuickShell-compatible environment (see QuickShell docs) (Hyprland is Recommended)
-- Terminal: A modern terminal emulator (Kitty is Recommended)
-- Fonts: A patched monospace font with ligatures is optional for prompts and status displays 
-- Git: recommended for dotfile updates and synchronization
+- Primary config: `~/.config/aelyxshell/config.json`
+- Modular settings: prompt, completion, and widget modules are separated for easy replacement.
+- To customize:
+  - Edit `~/.config/aelyxshell/config.json` or use the provided settings app (if installed).
+  - Enable/disable modules by editing the module list in the appropriate config file.
 
 ---
 
-## Troubleshooting
+<div align="center">
+  
+## ✦ Recommended environment ✦
 
-- Function or alias missing: verify module file execution order in `~/.config/quickshell/shell.qml`.
-- Performance on startup: disable unused modules or lazy-load heavy features.
-- Conflicting user configs: check for existing profile files (`~/.bashrc`, `~/.profile`, `~/.zshrc`) before bootstrapping.
+</div>
 
+- Shell: QuickShell-compatible environment (see QuickShell docs)
+- Compositor: Hyprland is recommended but not required
+- Terminal: Kitty or another modern terminal emulator
+- Fonts: A patched monospace font with ligatures for best prompt rendering
+- Git: recommended for keeping dotfiles updated and synced
 
 ---
 
-## To-Do
+<div align="center">
+  
+## ✦ Troubleshooting ✦
 
-- Make the config more accessible by making a install.sh script
+</div>
+
+- Missing alias or function:
+  - Ensure the module file is loaded in the correct order. Check `~/.config/quickshell/shell.qml`.
+- Slow startup:
+  - Disable unused modules or lazy-load heavy features (e.g., prompt segments that query network/state).
+- Conflicting user configs:
+  - Inspect existing profile files (`~/.bashrc`, `~.zshrc`, `~/.profile`) before applying changes.
+- Installer failures:
+  - Re-run the installer with verbose output or check `setup/` scripts for dependency checks.
 
 ---
 
-## Contributing
+<div align="center">
+  
+## ✦ To-Do ✦
 
-Contributions are accepted following the repository's contribution guidelines. When contributing:
-- Open concise issues after checking that it is a bug in the config.
+</div>
+
+- Redesign config layout and widget system for improved modularity and discoverability
+- Add more curated optional modules and theme variants
+- Improve installer prompts and backup behavior
+
+---
+
+<div align="center">
+  
+## ✦ Contributing ✦
+
+</div>
+
+Contributions are welcome. When contributing:
+- Open concise issues after confirming the problem isn't caused by local configuration.
 - Submit focused PRs with clear descriptions and tests where applicable.
-- Respect code structure and naming conventions used in `dots/`.
+- Follow code structure and naming conventions used in `dots/`.
 
-Refer to GITHUB CONTRIBUTING for details.
+See `license/CONTRIBUTING.md` for full contribution guidelines.
 
 ---
 
-## Maintainer
+<div align="center">
+  
+## ✦ Maintainer ✦
 
-- Maintainer: xZepyx 
+</div>
+
+- Maintainer: xZepyx (Aditya Yadav)  
 - Contact: [zepyxunderscore@gmail.com](mailto:zepyxunderscore@gmail.com)
 
 ---
 
-## Acknowledgments
+<div align="center">
+  
+## ✦ Acknowledgments ✦
 
-- QuickShell and its contributors/developers
+</div>
+
+- QuickShell and its contributors
 - Hyprland and its developers/contributors
 
 ---
 
-## License
+<div align="center">
+  
+## ✦ License ✦
 
-© 2025 xZepyx (Aditya Yadav) 
-Licensed under MIT LICENSE.
+</div>
+
+© 2025 xZepyx (Aditya Yadav) — Licensed under the MIT License. See `license/` for details.
+
+---
