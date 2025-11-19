@@ -41,7 +41,7 @@ Key goals:
 
 | Desktop                                          | Launcher                                           |
 |--------------------------------------------------|----------------------------------------------------|
-| ![Widgets](previews/1.png)                       | ![Launcher](previews/2.png)                        |
+| ![Widgets](/previews/1.png)                       | ![Launcher](/previews/2.png)                        |
 
 </div>
 
