@@ -22,7 +22,7 @@
 
 </div>
 
-Aelyx-shell (previously aelyx-shell) a quickshell configuration built for clarity, speed, and a smooth, cohesive hyprland experience.
+aelyx-shell a quickshell configuration built for clarity, speed, and a smooth, cohesive hyprland experience.
 
 Key goals:
 - Minimal, script-centric configuration
