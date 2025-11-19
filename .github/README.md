@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✦ Nucleus Shell ✦
+# ✦ Aelyx Shell ✦
 
 <p>
   <img src="https://img.shields.io/github/last-commit/xZepyx/aelyx-shell?style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B" alt="Last Commit" />
@@ -22,7 +22,7 @@
 
 </div>
 
-nucleus-shell (previously aelyx-shell) a quickshell configuration built for clarity, speed, and a smooth, cohesive hyprland experience.
+Aelyx-shell (previously aelyx-shell) a quickshell configuration built for clarity, speed, and a smooth, cohesive hyprland experience.
 
 Key goals:
 - Minimal, script-centric configuration
