@@ -127,6 +127,8 @@ Notes:
 
 </div>
 
+- **Important Notice: The shell has a lot of bugs and design issues. I will be redesigning the whole quickshell config please do not create issues with the current issues.**
+
 - Missing alias or function:
   - Ensure the module file is loaded in the correct order. Check `~/.config/quickshell/shell.qml`.
 - Slow startup:
