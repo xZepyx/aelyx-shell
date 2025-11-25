@@ -124,34 +124,43 @@ Singleton {
                 property int moduleRadius: Appearance.rounding.normal
                 property int islandRadius: Appearance.rounding.large
                 property int height: 50
+                property int width: Quickshell.screens.width
+                property string _comment_: "Style values are not in use rn."
                 property JsonObject modules: JsonObject {
                     property JsonObject systemTray: JsonObject {
                         property bool enabled: true 
                         property string position: "right"
+                        property int style: 1
                     }
                     property JsonObject media: JsonObject {
                         property bool enabled: true 
                         property string position: "center"
+                        property int style: 1
                     }
                     property JsonObject bluetoothWifi: JsonObject {
                         property bool enabled: true 
                         property string position: "right"
+                        property int style: 1
                     }
                     property JsonObject network: JsonObject {
                         property bool enabled: true 
                         property string position: "right"
+                        property int style: 1
                     }
                     property JsonObject userHostname: JsonObject {      
                         property bool enabled: true 
                         property string position: "left"
+                        property int style: 1
                     }
                     property JsonObject activeTopLevel: JsonObject {
                         property bool enabled: true 
                         property string position: "center"
+                        property int style: 1
                     }
                     property JsonObject clock: JsonObject {
                         property bool enabled: true 
                         property string position: "right"
+                        property int style: 1
                     }
                     property JsonObject workspaces: JsonObject {
                         property bool enabled: true 
@@ -159,6 +168,7 @@ Singleton {
                         property bool largeIcons: false
                         property bool showNumbers: true
                         property string position: "left"
+                        property int style: 1
                     }
                 }
             }

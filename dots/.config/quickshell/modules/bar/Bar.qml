@@ -17,7 +17,7 @@ Scope {
             namespace: "aelyx:bar"
             visible: Shell.flags.bar.enabled
             implicitHeight: Shell.flags.bar.height
-            implicitWidth: screen.width
+            implicitWidth: Shell.flags.bar.width
 
             anchors {
                 top: Shell.flags.bar.atTop

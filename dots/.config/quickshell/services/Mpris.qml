@@ -84,7 +84,7 @@ Item {
                 var cleanedtitle = text.trim()
                 if (cleanedtitle !== "")
                 root.albumTitle = cleanedtitle
-                else root.albumTitle = "No Media Player"
+                else root.albumTitle = "No Media"
 
 
             }

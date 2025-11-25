@@ -52,8 +52,8 @@ ContentMenu {
         }
 
         StyledSwitchOption {
-            title: "Visible"
-            description: "Change the bar's visiblity."
+            title: "Enabled"
+            description: "Enable of disable the bar."
             prefField: "bar.enabled"
         }
 
@@ -69,18 +69,60 @@ ContentMenu {
             prefField: "bar.floatingModules"
         }
 
-        StyledSwitchOption {
-            title: "Large Workspace Icons"
-            description: "Whether to keep the workspace icons large or not\nIf disabled, the bar will use small icons."
-            prefField: "bar.modules.workspaces.largeIcons"
+    }
+
+    ContentCard {
+        StyledText {
+            text: "Bar Rounding & Size"
+            font.pixelSize: 20
+            font.bold: true
         }
 
-        StyledSwitchOption {
-            title: "Workspace Numbers"
-            description: "Whether to keep numbers on workspace icons or not.\nNote - This will only work with large workspace icons."
-            prefField: "bar.modules.workspaces.showNumbers"
+        NumberStepper {
+            label: "Bar Height"
+            description: "Adjust the height of the bar."
+            prefField: "bar.height"
+            minimum: 40
+            maximum: 128
         }
 
+        NumberStepper {
+            label: "Bar Radius"
+            description: "Adjust the radius of the bar."
+            prefField: "bar.radius"
+            minimum: 10
+            maximum: 128
+        }
+
+        NumberStepper {
+            label: "Module Container Radius"
+            description: "Adjust the radius of the module container."
+            prefField: "bar.moduleRadius"
+            minimum: 10
+            maximum: 128
+        }
+
+        NumberStepper {
+            label: "Island Radius"
+            description: "Adjust the radius of the island radius."
+            prefField: "bar.islandRadius"
+            minimum: 10
+            maximum: 128
+        }
+
+        StyledText {
+            text: "Bar Module Values"
+            font.pixelSize: 20
+            font.bold: true
+        }
+
+        NumberStepper {
+            label: "Workspace Indicators"
+            description: "Adjust workspaces indicators on the bar."
+            prefField: "bar.modules.workspaces.numWorkspaces"
+            minimum: 1
+            maximum: 10
+        }
 
     }
 
@@ -132,6 +174,36 @@ ContentMenu {
 
                         }
 
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        Repeater {
+                            model: ['timer_1', 'timer_2']
+
+                            delegate: StyledButton {
+                                property string styleValue: modelData
+
+                                icon: modelData
+                                implicitWidth: 50
+                                checked: {
+                                    var val = Shell.flags && Shell.flags.bar && Shell.flags.bar.modules && Shell.flags.bar.modules.workspaces ? Shell.flags.bar.modules.workspaces.largeIcons : false;
+                                    return styleValue === 'timer_2' ? !!val : !val;
+                                }
+                                topLeftRadius: index === 0 ? Appearance.rounding.normal : Appearance.rounding.small
+                                bottomLeftRadius: index === 0 ? Appearance.rounding.normal : Appearance.rounding.small
+                                topRightRadius: index === (model.count - 1) ? Appearance.rounding.normal : Appearance.rounding.small
+                                bottomRightRadius: index === (model.count - 1) ? Appearance.rounding.normal : Appearance.rounding.small
+                                onClicked: {
+                                    Shell.setNestedValue("bar.modules.workspaces.largeIcons", styleValue === 'timer_2');
+                                }
+                            }
+
+                        }
+                        */
+
                     }
 
                 }
@@ -175,6 +247,37 @@ ContentMenu {
                             }
 
                         }
+
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        StyledButton {
+                            icon: "timer_1"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.systemTray.style === 1
+                            topLeftRadius: Appearance.rounding.normal
+                            bottomLeftRadius: Appearance.rounding.normal
+                            topRightRadius: Appearance.rounding.small
+                            bottomRightRadius: Appearance.rounding.small
+                            onClicked: Shell.setNestedValue("bar.modules.systemTray.style", 1)
+                        }
+
+                        StyledButton {
+                            icon: "timer_2"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.systemTray.style === 2
+                            topLeftRadius: Appearance.rounding.small
+                            bottomLeftRadius: Appearance.rounding.small
+                            topRightRadius: Appearance.rounding.normal
+                            bottomRightRadius: Appearance.rounding.normal
+                            onClicked: Shell.setNestedValue("bar.modules.systemTray.style", 2)
+                        }
+                        */
 
                     }
 
@@ -220,6 +323,37 @@ ContentMenu {
 
                         }
 
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        StyledButton {
+                            icon: "timer_1"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.media.style === 1
+                            topLeftRadius: Appearance.rounding.normal
+                            bottomLeftRadius: Appearance.rounding.normal
+                            topRightRadius: Appearance.rounding.small
+                            bottomRightRadius: Appearance.rounding.small
+                            onClicked: Shell.setNestedValue("bar.modules.media.style", 1)
+                        }
+
+                        StyledButton {
+                            icon: "timer_2"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.media.style === 2
+                            topLeftRadius: Appearance.rounding.small
+                            bottomLeftRadius: Appearance.rounding.small
+                            topRightRadius: Appearance.rounding.normal
+                            bottomRightRadius: Appearance.rounding.normal
+                            onClicked: Shell.setNestedValue("bar.modules.media.style", 2)
+                        }
+                        */
+
                     }
 
                 }
@@ -263,6 +397,37 @@ ContentMenu {
                             }
 
                         }
+
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        StyledButton {
+                            icon: "timer_1"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.bluetoothWifi.style === 1
+                            topLeftRadius: Appearance.rounding.normal
+                            bottomLeftRadius: Appearance.rounding.normal
+                            topRightRadius: Appearance.rounding.small
+                            bottomRightRadius: Appearance.rounding.small
+                            onClicked: Shell.setNestedValue("bar.modules.bluetoothWifi.style", 1)
+                        }
+
+                        StyledButton {
+                            icon: "timer_2"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.bluetoothWifi.style === 2
+                            topLeftRadius: Appearance.rounding.small
+                            bottomLeftRadius: Appearance.rounding.small
+                            topRightRadius: Appearance.rounding.normal
+                            bottomRightRadius: Appearance.rounding.normal
+                            onClicked: Shell.setNestedValue("bar.modules.bluetoothWifi.style", 2)
+                        }
+                        */
 
                     }
 
@@ -308,6 +473,37 @@ ContentMenu {
 
                         }
 
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        StyledButton {
+                            icon: "timer_1"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.network.style === 1
+                            topLeftRadius: Appearance.rounding.normal
+                            bottomLeftRadius: Appearance.rounding.normal
+                            topRightRadius: Appearance.rounding.small
+                            bottomRightRadius: Appearance.rounding.small
+                            onClicked: Shell.setNestedValue("bar.modules.network.style", 1)
+                        }
+
+                        StyledButton {
+                            icon: "timer_2"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.network.style === 2
+                            topLeftRadius: Appearance.rounding.small
+                            bottomLeftRadius: Appearance.rounding.small
+                            topRightRadius: Appearance.rounding.normal
+                            bottomRightRadius: Appearance.rounding.normal
+                            onClicked: Shell.setNestedValue("bar.modules.network.style", 2)
+                        }
+                        */
+
                     }
 
                 }
@@ -351,6 +547,37 @@ ContentMenu {
                             }
 
                         }
+
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        StyledButton {
+                            icon: "timer_1"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.userHostname.style === 1
+                            topLeftRadius: Appearance.rounding.normal
+                            bottomLeftRadius: Appearance.rounding.normal
+                            topRightRadius: Appearance.rounding.small
+                            bottomRightRadius: Appearance.rounding.small
+                            onClicked: Shell.setNestedValue("bar.modules.userHostname.style", 1)
+                        }
+
+                        StyledButton {
+                            icon: "timer_2"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.userHostname.style === 2
+                            topLeftRadius: Appearance.rounding.small
+                            bottomLeftRadius: Appearance.rounding.small
+                            topRightRadius: Appearance.rounding.normal
+                            bottomRightRadius: Appearance.rounding.normal
+                            onClicked: Shell.setNestedValue("bar.modules.userHostname.style", 2)
+                        }
+                        */
 
                     }
 
@@ -396,6 +623,37 @@ ContentMenu {
 
                         }
 
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        StyledButton {
+                            icon: "timer_1"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.activeTopLevel.style === 1
+                            topLeftRadius: Appearance.rounding.normal
+                            bottomLeftRadius: Appearance.rounding.normal
+                            topRightRadius: Appearance.rounding.small
+                            bottomRightRadius: Appearance.rounding.small
+                            onClicked: Shell.setNestedValue("bar.modules.activeTopLevel.style", 1)
+                        }
+
+                        StyledButton {
+                            icon: "timer_2"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.activeTopLevel.style === 2
+                            topLeftRadius: Appearance.rounding.small
+                            bottomLeftRadius: Appearance.rounding.small
+                            topRightRadius: Appearance.rounding.normal
+                            bottomRightRadius: Appearance.rounding.normal
+                            onClicked: Shell.setNestedValue("bar.modules.activeTopLevel.style", 2)
+                        }
+                        */
+
                     }
 
                 }
@@ -439,6 +697,37 @@ ContentMenu {
                             }
 
                         }
+
+                        /*Rectangle {
+                            width: 1
+                            Layout.fillHeight: true
+                            color: Appearance.m3colors.m3outline
+                        }
+
+                        StyledButton {
+                            icon: "timer_1"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.clock.style === 1
+                            topLeftRadius: Appearance.rounding.normal
+                            bottomLeftRadius: Appearance.rounding.normal
+                            topRightRadius: Appearance.rounding.small
+                            bottomRightRadius: Appearance.rounding.small
+                            onClicked: Shell.setNestedValue("bar.modules.clock.style", 1)
+                        }
+
+                        StyledButton {
+                            icon: "timer_2"
+                            font.family: "Material Symbols Rounded"
+                            implicitWidth: 50
+                            checked: Shell.flags.bar.modules.clock.style === 2
+                            topLeftRadius: Appearance.rounding.small
+                            bottomLeftRadius: Appearance.rounding.small
+                            topRightRadius: Appearance.rounding.normal
+                            bottomRightRadius: Appearance.rounding.normal
+                            onClicked: Shell.setNestedValue("bar.modules.clock.style", 2)
+                        }
+                        */
 
                     }
 

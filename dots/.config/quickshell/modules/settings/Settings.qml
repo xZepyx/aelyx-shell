@@ -44,11 +44,10 @@ Scope {
             property var menuModel: [
                 // header
                 { header: true, label: "Customization" },
-                { icon: "imagesearch_roller", label: "Appearance", page: 0 },
-                { icon: "instant_mix", label: "Interface", page: 1},
+                { icon: "instant_mix", label: "Quick Settings", page: 0 },
+                { icon: "imagesearch_roller", label: "Interface", page: 1},
                 { icon: "wallpaper", label: "Wallpapers", page: 2},
                 { icon: "build", label: "Misc", page: 3},
-                { header: true, label: "Configuration" },
             ]
 
             Component.onCompleted: settingsWindow = root
@@ -194,10 +193,10 @@ Scope {
 
                     currentIndex: root.selectedIndex
                     
-                    AppearanceConfig { }
-                    InterfaceConfig { }
-                    WallpaperConfig { }
-                    MiscMenu { }
+                    QuickSettings { }
+                    Interface { }
+                    Wallpaper { }
+                    MiscSettings { }
                 }
             }
         }
