@@ -32,11 +32,11 @@ Scope {
         id: genThemeColors
         command: [
             "bash", "-c",
-            "~/.local/share/aelyx/scripts/background/gencolors.sh " +
-            Shell.flags.background.wallpaperPath + " " +
-            Shell.flags.appearance.colorScheme + " " +
+            "~/.local/share/aelyx/scripts/background/gencolors.sh \"$1\" \"$2\" \"$3\"",
+            "_",  // $0 placeholder
+            Shell.flags.background.wallpaperPath,
+            Shell.flags.appearance.colorScheme,
             Shell.flags.appearance.theme
         ]
     }
-
 }
