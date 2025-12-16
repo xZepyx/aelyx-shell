@@ -33,6 +33,8 @@ packages=(
     "ttf-font-awesome"
     "vim"
     "fastfetch"
+    "matugen-bin"
+    "zenity"
     "ttf-fira-sans" 
     "fish"
     "ttf-fira-code" 
