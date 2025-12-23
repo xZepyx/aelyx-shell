@@ -1,159 +1,93 @@
 #!/usr/bin/env bash
+set -Eeuo pipefail
 
-# ----------------------------------------------------------
-# Dependencies for aelyxshell
-# ----------------------------------------------------------
+PROFILE="${1:-full}"
 
-packages=(
-    "wget"
-    "unzip"
-    "git"
-    "gum"    
-    "hyprland"
-    "wf-recorder"
-    "grim"
-    "slurp"
-    "ttf-jetbrains-mono"
-    "nvim"
-    "nmcli"
-    "nmtui"
-    "ttf-material-symbols-variable-git"
-    "nautilus"
-    "quickshell"
-    "nerd-fonts"
-    "starship"
-    "kitty"
-    "xdg-desktop-portal-hyprland"
-    "qt5-wayland"
-    "qt6-wayland"
-    "hyprpaper"
-    "hyprlock"
-    "firefox"
-    "inetutils"
-    "pywalfox"
-    "ttf-font-awesome"
-    "vim"
-    "fastfetch"
-    "papirus-icon-theme-git"
-    "playerctl"
-    "bluez-utils"
-    "matugen-bin"
-    "zenity"
-    "ttf-fira-sans" 
-    "fish"
-    "ttf-fira-code" 
-    "ttf-firacode-nerd"
-    "jq"
-    "brightnessctl"
-    "networkmanager"
-    "wireplumber"
-    "flatpak"
-    "ddcutil"
-    "qt5-graphicaleffects"
-    "qt6-5compat"
-    "hyprpicker"
+# ---------- Colors ----------
+GREEN="\033[0;32m"
+RED="\033[0;31m"
+BLUE="\033[0;34m"
+GRAY="\033[0;90m"
+RESET="\033[0m"
+
+# ---------- Packages ----------
+FULL_PACKAGES=(
+    hyprland hyprpaper hyprlock hyprpicker
+    wf-recorder grim slurp
+    kitty fish starship
+    firefox nautilus
+    networkmanager wireplumber bluez-utils
+    fastfetch playerctl brightnessctl
+    papirus-icon-theme-git
+    nerd-fonts ttf-jetbrains-mono
+    ttf-fira-code ttf-firacode-nerd
+    ttf-material-symbols-variable-git
+    ttf-font-awesome ttf-fira-sans
+    quickshell matugen-bin
+    qt5-wayland qt6-wayland qt5-graphicaleffects qt6-5compat
+    xdg-desktop-portal-hyprland
+    zenity jq ddcutil flatpak
 )
 
-# ----------------------------------------------------------
-# Colors
-# ----------------------------------------------------------
+SHELL_PACKAGES=(
+    quickshell matugen-bin zenity
+    kitty starship fish
+    qt5-wayland qt6-wayland qt5-graphicaleffects qt6-5compat
+    nerd-fonts ttf-jetbrains-mono
+    ttf-fira-code ttf-firacode-nerd
+    ttf-material-symbols-variable-git
+    ttf-font-awesome ttf-fira-sans
+)
 
-GREEN='\033[0;32m'
-NONE='\033[0m'
+PACKAGES=("${FULL_PACKAGES[@]}")
+[[ "$PROFILE" == "shell" ]] && PACKAGES=("${SHELL_PACKAGES[@]}")
 
-# ----------------------------------------------------------
-# Check if command exists
-# ----------------------------------------------------------
+# ---------- Helpers ----------
+exists() { command -v "$1" &>/dev/null; }
+installed() { pacman -Qs "$1" &>/dev/null; }
 
-_checkCommandExists() {
-    command -v "$1" >/dev/null 2>&1
-}
-
-# ----------------------------------------------------------
-# Check if package is already installed
-# ----------------------------------------------------------
-
-_isInstalled() {
-    pacman -Qs "$1" >/dev/null 2>&1
-}
-
-# ----------------------------------------------------------
-# Install yay (AUR helper) if needed
-# ----------------------------------------------------------
-
-_installYay() {
-    echo ":: Installing yay..."
+install_yay() {
+    echo -e "${BLUE}>> Installing yay...${RESET}"
     sudo pacman -S --needed --noconfirm base-devel git
-    tmp_dir=$(mktemp -d)
-    git clone https://aur.archlinux.org/yay.git "$tmp_dir/yay"
-    pushd "$tmp_dir/yay" || exit
+    tmp=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git "$tmp/yay"
+    pushd "$tmp/yay" >/dev/null
     makepkg -si --noconfirm
-    popd || exit
-    rm -rf "$tmp_dir"
-    echo ":: yay installed successfully."
+    popd >/dev/null
+    rm -rf "$tmp"
 }
 
-# ----------------------------------------------------------
-# Install packages
-# ----------------------------------------------------------
-
-_installPackages() {
-    for pkg in "$@"; do
-        if _isInstalled "$pkg"; then
-            echo ":: ${pkg} is already installed."
-        else
-            echo ":: Installing ${pkg}..."
-            yay --noconfirm -S "$pkg"
-        fi
-    done
-}
-
-# ----------------------------------------------------------
-# Header
-# ----------------------------------------------------------
-
+# ---------- Start ----------
 clear
 echo -e "${GREEN}"
 cat <<"EOF"
-   ____    __          
-  / __/__ / /___ _____ 
+   ____    __
+  / __/__ / /___ _____
  _\ \/ -_) __/ // / _ \
 /___/\__/\__/\_,_/ .__/
-                /_/    
-aelyxshell dependency installer for arch-based distros
+                /_/
+Aelyx dependency installer (Arch-based)
 EOF
-echo -e "${NONE}"
+echo -e "${RESET}"
 
-# ----------------------------------------------------------
-# Confirm start
-# ----------------------------------------------------------
-
-read -p "Do you want to start installing dependencies? (Y/n): " yn
-
-if [[ -n "$yn" && ! $yn =~ ^[Yy]$ ]]; then
-    echo ":: Installation canceled."
-    exit 0
-fi
-
-# ----------------------------------------------------------
-# Install yay if needed
-# ----------------------------------------------------------
-
-if _checkCommandExists "yay"; then
-    echo ":: yay is already installed."
+# ---------- yay ----------
+if ! exists yay; then
+    install_yay
 else
-    _installYay
+    echo -e "${GRAY}:: yay already installed${RESET}"
 fi
 
-# ----------------------------------------------------------
-# Install all dependencies
-# ----------------------------------------------------------
+# ---------- Install ----------
+for pkg in "${PACKAGES[@]}"; do
+    if installed "$pkg"; then
+        echo -e "${GRAY}:: $pkg already installed${RESET}"
+    else
+        echo -e "${BLUE}:: Installing $pkg${RESET}"
+        yay -S --noconfirm "$pkg" || {
+            echo -e "${RED}Failed to install $pkg${RESET}"
+            exit 1
+        }
+    fi
+done
 
-_installPackages "${packages[@]}"
-
-# ----------------------------------------------------------
-# Completed
-# ----------------------------------------------------------
-
-echo ":: All dependencies installed successfully."
-
+echo -e "${GREEN}✔ Dependencies installed successfully${RESET}"
