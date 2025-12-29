@@ -6,7 +6,6 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
 import qs.functions
-import qs.modules.sidebarRight
 import qs.services
 import qs.settings
 import qs.widgets

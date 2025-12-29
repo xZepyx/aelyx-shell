@@ -40,8 +40,8 @@ PanelWindow {
     }
 
     margins {
-        top: monitor.height / 8
-        bottom: monitor.height / 8
+        top: screenH / 8
+        bottom: screenH / 8
         left: Appearance.margin.large
         right: Appearance.margin.large
     }

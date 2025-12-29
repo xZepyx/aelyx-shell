@@ -30,9 +30,10 @@ StyledRect {
         anchors.right: parent.right
         anchors.bottomMargin: 10
         anchors.rightMargin: 10
+        icon: "clear_all"
         text: "Clear"
         implicitHeight: 40
-        implicitWidth: 80
+        implicitWidth: 100
         secondary: true
 
         onClicked: {
@@ -50,8 +51,9 @@ StyledRect {
         anchors.bottomMargin: 10
         anchors.rightMargin: clearButton.implicitWidth + 15
         text: "Silent"
+        icon: "do_not_disturb_on"
         implicitHeight: 40
-        implicitWidth: 80
+        implicitWidth: 100
         secondary: true
         checkable: true 
         checked: Shell.flags.misc.dndEnabled

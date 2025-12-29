@@ -9,9 +9,9 @@ import Quickshell.Wayland
 
 Rectangle {
     id: root
-    property bool startAnim: false
 
-    property string title: "WawaApp"
+    property bool startAnim: false
+    property string title: "No Title"
     property string body: "No content"
     property var rawNotif: null
     property bool tracked: false

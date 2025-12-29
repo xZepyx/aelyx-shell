@@ -240,7 +240,7 @@ Item {
             }
 
             NotifModal {
-                Layout.preferredHeight: 430
+                Layout.preferredHeight: 460
             }
         }
     }

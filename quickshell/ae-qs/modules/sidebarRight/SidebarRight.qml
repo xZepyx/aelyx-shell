@@ -34,10 +34,9 @@ PanelWindow {
     }
 
     margins {
-        top: 20
-        bottom: 20
-        left: Appearance.margin.large
-        right: Appearance.margin.large
+        top: 10
+        bottom: 10
+        right: Appearance.margin.small
     }
 
     PwObjectTracker {
