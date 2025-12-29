@@ -21,7 +21,7 @@ BarModule {
         radius: Shell.flags.bar.moduleRadius
         // Padding around the text
         implicitWidth: child.implicitWidth + Appearance.margin.large
-        implicitHeight: child.implicitHeight + Appearance.margin.verysmall - 3
+        implicitHeight: child.implicitHeight + Appearance.margin.verysmall - 2
     }
 
     RowLayout {

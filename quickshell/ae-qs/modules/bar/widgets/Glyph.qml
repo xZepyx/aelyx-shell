@@ -10,7 +10,7 @@ StyledText {
 
     Layout.alignment: Qt.AlignLeft
     Layout.leftMargin: 10
-    font.pixelSize: 28
+    font.pixelSize: 26
     text: SystemDetails.osIcon
     color: GlobalStates.sidebarLeftOpen || ma.containsMouse ? Appearance.m3colors.m3primary : Appearance.syntaxHighlightingTheme
 
