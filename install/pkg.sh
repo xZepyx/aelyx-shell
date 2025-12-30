@@ -63,7 +63,7 @@ packages=(
     firefox nautilus
     networkmanager wireplumber bluez-utils
     fastfetch playerctl brightnessctl
-    papirus-icon-theme-git
+    papirus-icon-theme-git hyprsunset
     nerd-fonts ttf-jetbrains-mono
     ttf-fira-code ttf-firacode-nerd
     ttf-material-symbols-variable-git
