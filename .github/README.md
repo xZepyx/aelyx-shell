@@ -139,10 +139,6 @@ Notes:
   - Inspect existing profile files (`~/.bashrc`, `~.zshrc`, `~/.profile`, `~/.config`) before applying changes.
 - Installer failures:
   - Re-run the installer with verbose output or check `install/` scripts for dependency checks.
-- Create issues if nothing works make sure when you create a issue including this checklist:
-  - [ ] The install script completed without errors, and I did not skip or ignore any failed commands
-  - [ ] My system is up to date (including aelyx-shell).  
-  - [ ] I am using the latest **stable** release of aelyx-shell (not beta/alpha/rc build)
 
 ---
 
