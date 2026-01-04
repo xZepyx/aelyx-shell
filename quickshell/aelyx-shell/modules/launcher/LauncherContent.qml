@@ -87,8 +87,8 @@ Item {
 
     Process {
         id: appLoader
-
-        command: ["bash", "-c", "bash \"~/.config/quickshell/aelyx-shell/scripts/finders/find-apps.sh\""]
+        running: true
+        command: ["bash", "-c", "~/.config/quickshell/aelyx-shell/scripts/finders/find-apps.sh"]
 
         stdout: SplitParser {
             onRead: (data) => {

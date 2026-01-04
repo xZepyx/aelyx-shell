@@ -9,12 +9,12 @@
         "clockTimeFormat": "hh:mm",
         "showClock": true,
         "wallpaperEnabled": true,
-        "wallpaperPath": "file:///home/zepyx/Pictures/Wallpapers/1224149.png"
+        "wallpaperPath": "file:///home/zepyx/Pictures/Wallpapers/14.jpg"
     },
     "bar": {
         "density": 50,
         "enabled": true,
-        "floating": true,
+        "floating": false,
         "gothCorners": true,
         "islandRadius": 23,
         "moduleRadius": 17,
@@ -23,8 +23,8 @@
                 "workspaceIndicators": 8
             }
         },
-        "position": "top",
-        "radius": 17,
+        "position": "left",
+        "radius": 24,
         "width": 1080
     },
     "misc": {
