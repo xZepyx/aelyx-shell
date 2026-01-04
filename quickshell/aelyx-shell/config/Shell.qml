@@ -100,8 +100,8 @@ Singleton {
 
             property JsonObject shellInfo: JsonObject {
                 property string qsVersion: "0.2.1"
-                property string version: "4.0.0-alpha.1"
-                property string channel: "edge"
+                property string version: "4.0.2"
+                property string channel: "stable"
             }
 
             property JsonObject misc: JsonObject {
