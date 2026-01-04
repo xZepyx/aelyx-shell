@@ -182,7 +182,7 @@ BarModule {
                         }
 
                         rotation: (Shell.flags.bar.position === "left" || Shell.flags.bar.position === "right") ? 270 : 0
-                        font.pixelSize: Appearance.font.size.large
+                        font.pixelSize: (symbol.text === "fiber_manual_record") ? 10 : Appearance.font.size.large
                         color: focused ? Appearance.m3colors.m3shadow : Appearance.m3colors.m3secondary
                     }
 
