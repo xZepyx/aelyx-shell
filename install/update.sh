@@ -98,6 +98,6 @@ jq --arg v "$latest" '.shellInfo.version = $v' "$CONFIG" > "$tmp_cfg"
 mv "$tmp_cfg" "$CONFIG"
 
 # Reload system
-nohup bash ~/.config/aelyx-shell/scripts/system/reloadSystem.sh > /dev/null 2>&1 & disown
+nohup killall qs; qs -c aelyx-shell > /dev/null 2>&1 & disown
 
 echo "Updated $current -> $latest"

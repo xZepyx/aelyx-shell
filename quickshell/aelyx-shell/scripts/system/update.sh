@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-CONFIG="$HOME/.local/share/aelyx/user/config.json"
+CONFIG="$HOME/.config/aelyx-shell/config/settings.json"
 QS_DIR="$HOME/.config/quickshell/aelyx-shell"
 REPO="xZepyx/aelyx-shell"
 API="https://api.github.com/repos/$REPO/releases"
@@ -27,7 +27,7 @@ esac
 
 # Check config exists
 if [[ ! -f "$CONFIG" ]]; then
-    echo "config.json not found"
+    echo "settings.json not found"
     exit 1
 fi
 
@@ -98,6 +98,6 @@ jq --arg v "$latest" '.shellInfo.version = $v' "$CONFIG" > "$tmp_cfg"
 mv "$tmp_cfg" "$CONFIG"
 
 # Reload system
-nohup bash ~/.config/quickshell/scripts/system/reloadSystem.sh > /dev/null 2>&1 & disown
+nohup killall qs; qs -c aelyx-shell > /dev/null 2>&1 & disown
 
 echo "Updated $current -> $latest"
