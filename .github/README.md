@@ -6,7 +6,6 @@
   <img src="https://img.shields.io/github/last-commit/xZepyx/nucleus-shell?style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B" alt="Last Commit" />
   &nbsp;
   <img src="https://img.shields.io/github/stars/xZepyx/nucleus-shell?style=for-the-badge&logo=andela&color=86dbd7&logoColor=D9E0EE&labelColor=1E202B" alt="Stars" />
-  &nbsp;
   <img src="https://img.shields.io/github/repo-size/xZepyx/nucleus-shell?color=86dbce&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B" alt="Repo Size" />
   &nbsp;
   <img src="https://img.shields.io/badge/Maintenance-Active%20-6BCB77?style=for-the-badge&logo=vercel&logoColor=D9E0EE&labelColor=1E202B" alt="Maintenance" />
@@ -157,14 +156,13 @@ Notes:
 <div align="center">
   
 ## ✦ Weird Tentacles ✦
-<a href="https://www.star-history.com/#xzepyx/nucleus-shell&type=date&legend=top-left">
+<a href="https://www.star-history.com/#xZepyx/nucleus-shell&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=xzepyx/nucleus-shell&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=xzepyx/nucleus-shell&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=xzepyx/nucleus-shell&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=xZepyx/nucleus-shell&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=xZepyx/nucleus-shell&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=xZepyx/nucleus-shell&type=date&legend=top-left" />
  </picture>
 </a>
-</div>
 
 
 ---
