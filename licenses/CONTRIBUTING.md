@@ -1,4 +1,4 @@
-# Contributing to aelyx-shell
+# Contributing to nucleus-shell
 
 Thank you for your interest in contributing. Please follow these guidelines to help us maintain high standards and efficiency.
 
