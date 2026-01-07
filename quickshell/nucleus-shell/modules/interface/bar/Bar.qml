@@ -21,6 +21,7 @@ Scope {
 
             required property var modelData
             property int rd: Config.runtime.bar.radius
+            property int margin: Config.runtime.bar.margins
             property bool floating: Config.runtime.bar.floating
             property bool merged: Config.runtime.bar.merged
             property string pos: Config.runtime.bar.position
@@ -48,10 +49,45 @@ Scope {
             }
 
             margins {
-                top: (floating) ? rd : (vertical) ? rd : (merged && attachedBottom) ? rd : 0
-                bottom: (floating) ? rd : (vertical) ? rd : (merged && attachedTop) ? rd : 0
-                left: (floating) ? rd : (vertical) ? 0 : (merged && attachedRight) ? rd : 10
-                right: (floating) ? rd : (vertical) ? 0 : (merged && attachedLeft) ? rd : 10
+                top: {
+                    if (floating)
+                        return margin;
+
+                    if (merged && vertical)
+                        return margin;
+
+                    return 0;
+                }
+
+                bottom: {
+                    if (floating)
+                        return margin;
+
+                    if (merged && vertical)
+                        return margin;
+
+                    return 0;
+                }
+
+                left: {
+                    if (floating)
+                        return margin;
+
+                    if (merged && !vertical)
+                        return margin;
+
+                    return 0;
+                }
+
+                right: {
+                    if (floating)
+                        return margin;
+
+                    if (merged && !vertical)
+                        return margin;
+
+                    return 0;
+                }
             }
 
             StyledRect {

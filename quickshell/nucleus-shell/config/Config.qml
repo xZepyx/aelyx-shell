@@ -130,7 +130,7 @@ Singleton {
                 property bool floating: false
                 property bool gothCorners: true
                 property int radius: Appearance.rounding.large
-                property int sideMargins: Appearance.margins.normal
+                property int margins: Appearance.margin.normal
                 property int density: 50
                 property JsonObject modules: JsonObject {
                     property int radius: Appearance.rounding.normal

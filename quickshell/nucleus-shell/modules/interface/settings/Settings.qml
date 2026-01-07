@@ -50,6 +50,8 @@ Scope {
             Component.onCompleted: settingsWindow = root
         }
 
+        // WIP 
+
     }
 
 }

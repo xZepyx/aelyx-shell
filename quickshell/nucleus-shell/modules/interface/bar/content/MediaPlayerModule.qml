@@ -65,7 +65,7 @@ Item {
                 layer.enabled: true
 
                 layer.effect: ColorOverlay {
-                    color: Config.runtime.appearance.theme === "dark" ? '#b1a4a4' : "grey"
+                    color: Mpris.artUrl === "" ? Config.runtime.appearance.theme === "dark" ? '#b1a4a4' : "grey" : "transparent"
                     source: art
                 }
 
