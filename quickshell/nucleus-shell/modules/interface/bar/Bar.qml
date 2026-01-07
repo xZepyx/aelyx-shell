@@ -58,7 +58,6 @@ Scope {
 
                     return 0;
                 }
-
                 bottom: {
                     if (floating)
                         return margin;
@@ -68,7 +67,6 @@ Scope {
 
                     return 0;
                 }
-
                 left: {
                     if (floating)
                         return margin;
@@ -78,7 +76,6 @@ Scope {
 
                     return 0;
                 }
-
                 right: {
                     if (floating)
                         return margin;
@@ -134,6 +131,22 @@ Scope {
 
                 BarContent {
                     anchors.fill: parent
+                }
+
+                Behavior on bottomLeftRadius {
+                    animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
+                }
+
+                Behavior on topLeftRadius {
+                    animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
+                }
+
+                Behavior on bottomRightRadius {
+                    animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
+                }
+
+                Behavior on topRightRadius {
+                    animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
                 }
 
             }

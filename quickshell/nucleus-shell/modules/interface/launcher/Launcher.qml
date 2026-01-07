@@ -189,11 +189,7 @@ PanelWindow {
             }
 
             Behavior on implicitHeight {
-                NumberAnimation {
-                    duration: 160
-                    easing.type: Easing.BezierSpline
-                }
-
+                animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
             }
 
         }
