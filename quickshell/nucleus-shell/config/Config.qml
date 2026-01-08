@@ -107,6 +107,12 @@ Singleton {
                         property bool enabled: true 
                         property string position: "bottom-left" // top-left, top-right, bottom-right, bottom-left
                     }
+                    property JsonObject slideshow: JsonObject {
+                        property bool enabled: false
+                        property string folder: ""
+                        property int interval: 5 // minutes
+                        property bool includeSubfolders: true
+                    }
                 }
             }
 

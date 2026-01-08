@@ -4,6 +4,7 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
 import qs.config
+import qs.services
 import qs.modules.functions
 import qs.modules.widgets
 
@@ -188,6 +189,10 @@ Scope {
             IpcHandler {
                 function change() {
                     wallpaperProc.running = true;
+                }
+
+                function next() {
+                    WallpaperSlideshow.nextWallpaper();
                 }
 
                 target: "background"
