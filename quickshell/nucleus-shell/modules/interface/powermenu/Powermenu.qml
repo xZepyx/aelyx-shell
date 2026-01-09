@@ -7,6 +7,7 @@ import Quickshell.Io
 import Quickshell.Services.Pipewire
 import Quickshell.Wayland
 import qs.modules.functions
+import qs.modules.interface.lockscreen
 import qs.services
 import qs.config
 import qs.modules.widgets
@@ -98,7 +99,7 @@ PanelWindow {
                 PowerMenuButton {
                     buttonIcon: "lock"
                     onClicked: {
-                        Quickshell.execDetached(["hyprlock"])
+                        Quickshell.execDetached(["qs", "-c", "nucleus-shell", "ipc", "call", "lockscreen", "lock"])
                         Globals.visiblility.powermenu = false
                     }
                 }
