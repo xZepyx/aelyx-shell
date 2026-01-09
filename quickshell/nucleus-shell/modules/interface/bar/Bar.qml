@@ -33,7 +33,7 @@ Scope {
             property bool attachedRight: pos === "right"
 
             screen: modelData // Show bar on all screens
-            visible: Config.runtime.bar.enabled
+            visible: Config.runtime.bar.enabled && Config.initialized
             WlrLayershell.namespace: "nucleus:bar"
             exclusiveZone: Config.runtime.bar.floating ? Config.runtime.bar.density + Appearance.margin.tiny : Config.runtime.bar.density
             implicitHeight: Config.runtime.bar.density // density === height. (horizontal orientation)

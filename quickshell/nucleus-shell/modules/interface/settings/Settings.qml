@@ -90,7 +90,7 @@ Scope {
             width: 1280
             height: 720
             visible: true
-            title: "Aelyx Settings"
+            title: "Nucleus - Settings"
             color: Appearance.m3colors.m3background
             onClosing: Globals.states.settingsOpen = false
             Component.onCompleted: settingsWindow = root
