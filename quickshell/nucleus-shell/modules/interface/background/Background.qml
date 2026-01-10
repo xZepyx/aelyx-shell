@@ -4,9 +4,9 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Wayland
 import qs.config
-import qs.services
 import qs.modules.functions
 import qs.modules.widgets
+import qs.services
 
 Scope {
     id: root
@@ -55,7 +55,8 @@ Scope {
                             selectedWallpaper = out;
                             applyWallpaper();
                         }
-                        Quickshell.execDetached(["qs", "-c", "nucleus-shell", "ipc", "call", "global", "regenColors"])
+                        // Only run regenColors if auto-generated colors are enabled
+                        Quickshell.execDetached(["qs", "-c", "nucleus-shell", "ipc", "call", "global", "regenColors"]);
                     }
                 }
 
@@ -74,6 +75,8 @@ Scope {
                 }
 
                 Image {
+                    // Fade animation
+
                     id: nextImage
 
                     anchors.fill: parent
@@ -82,15 +85,17 @@ Scope {
                     opacity: 0
                     onStatusChanged: {
                         if (status === Image.Ready && nextSource !== "")
-                            fadeAnim.start(); // Fade animation
+                            fadeAnim.start();
 
                     }
                 }
 
-                ParallelAnimation { // goofy-ahh animation
+                // goofy-ahh animation
+                ParallelAnimation {
                     id: fadeAnim
 
-                    onFinished: { // When finished change source
+                    onFinished: {
+                        // When finished change source
                         currentSource = nextSource;
                         nextSource = "";
                         currentImage.opacity = 1;
@@ -98,7 +103,8 @@ Scope {
                         Config.updateKey("appearance.background.path", currentSource);
                     }
 
-                    NumberAnimation { // Fade Out
+                    // Fade Out
+                    NumberAnimation {
                         target: currentImage
                         property: "opacity"
                         to: 0
@@ -106,7 +112,8 @@ Scope {
                         easing.type: Easing.InOutCubic
                     }
 
-                    NumberAnimation { // Fade In
+                    // Fade In
+                    NumberAnimation {
                         target: nextImage
                         property: "opacity"
                         to: 1
