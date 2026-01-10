@@ -129,7 +129,7 @@ Singleton {
             }
 
             property JsonObject shell: JsonObject {
-                property string version: "0.1.0"
+                property string version: "0.2.0"
                 property string releaseChannel: "stable"
             }
 
