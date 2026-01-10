@@ -257,7 +257,6 @@ ContentMenu {
                     // This bool is only used at some places not everywhere so user gets notified
                     // But also won't get spammed
                     Quickshell.execDetached(["qs", "-c", "nucleus-shell", "ipc", "call", "background", "next"]);
-                    Quickshell.execDetached(["qs", "-c", "nucleus-shell", "ipc", "call", "global", "regenColors"]);
 
                 }
             }

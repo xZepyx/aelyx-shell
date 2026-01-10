@@ -65,7 +65,7 @@ ContentMenu {
                     case "top-right":
                         return 1;
                     case "top":
-                        return 3;
+                        return 2;
                     default:
                         return 0;
                     }
