@@ -79,12 +79,16 @@ Scope {
                 "label": "Notifications",
                 "page": 7
             }, {
+                "icon": "build",
+                "label": "Miscellaneous",
+                "page": 8
+            }, {
                 "header": true,
                 "label": "About"
             }, {
                 "icon": "info",
                 "label": "About",
-                "page": 8
+                "page": 9
             }]
 
             width: 1280
@@ -331,6 +335,9 @@ Scope {
                     }
 
                     NotificationConfig {
+                    }
+
+                    MiscConfig {
                     }
 
                     About {

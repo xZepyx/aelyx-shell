@@ -6,17 +6,16 @@ import qs.config
 
 Item {
     id: updater
-    // Will not be used for now.
     // Add 'v' arg to default local version because it is not stored
     // as vX.Y.Z but X.Y.Z while on github its published as vX.Y.Z
 
     property string currentVersion: ""
     property string latestVersion: ""
     property bool notified: false
-    property string channel: Shell.flags.shellInfo.channel || "stable"
+    property string channel: Config.runtime.shell.releaseChannel || "stable"
 
     function readLocalVersion() {
-        currentVersion = "v" + (Shell.flags.shellInfo.version || "");
+        currentVersion = "v" + (Config.runtime.shell.version || "");
     }
 
     function fetchLatestVersion() {
@@ -79,8 +78,8 @@ Item {
     function notifyUpdate() {
         Quickshell.execDetached([
             "notify-send",
-            "-a", "nucleus-shell",
-            "Shell Update Available",
+            "-a", "Nucleus Shell",
+            "Update Available",
             "Installed: " + currentVersion +
             "\nLatest (" + channel + "): " + latestVersion
         ]);

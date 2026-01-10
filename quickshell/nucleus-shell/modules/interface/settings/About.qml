@@ -70,5 +70,39 @@ Item {
         }
     }
 
-
+    StyledRect {
+        color: ma.containsMouse ? Qt.lighter(Appearance.m3colors.m3secondaryContainer, 1.1) : Appearance.m3colors.m3secondaryContainer
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        anchors.margins: 40
+        implicitHeight: updateText.height + 20
+        implicitWidth: implicitHeight
+        radius: 10
+        StyledText {
+            id: updateText
+            text: "󰚰" // These come in handy sometimes
+            font.pixelSize: 24
+            anchors.centerIn: parent
+        }
+        MouseArea {
+            id: ma
+            anchors.fill: parent 
+            hoverEnabled: true
+            onClicked: {
+                Globals.states.settingsOpen = false;
+                Quickshell.execDetached(["notify-send", "Updating Nucleus Shell"])
+                Quickshell.execDetached(["kitty", "--hold" ,"bash", "-c", Directories.scriptsPath + "/system/update.sh"])
+            }
+        }
+    }
+    StyledText {
+        text: "Nucleus-Shell v" + Config.runtime.shell.version
+        font.pixelSize: 12
+        textFormat: Text.RichText
+        horizontalAlignment: Text.AlignHCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 60
+        anchors.horizontalCenter: parent.horizontalCenter
+        onLinkActivated: Qt.openUrlExternally(link)
+    }
 }

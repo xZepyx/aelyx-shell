@@ -126,6 +126,11 @@ Singleton {
                 property string position: "center" // center, left(top), right(top)  
             }
 
+            property JsonObject shell: JsonObject {
+                property string version: "0.1.0"
+                property string releaseChannel: "stable"
+            }
+
             property JsonObject overlays: JsonObject {
                 property bool enabled: true 
                 property bool volumeOverlayEnabled: true 
