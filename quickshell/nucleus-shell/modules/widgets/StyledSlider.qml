@@ -63,6 +63,7 @@ Slider {
             bottomRightRadius: root.trackNearHandleRadius
 
             Behavior on width {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: !root.useAnim ? 0 : Appearance.animation.durations.small
                     easing.type: Easing.BezierSpline
@@ -86,6 +87,7 @@ Slider {
             bottomLeftRadius: root.trackNearHandleRadius
 
             Behavior on width {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: !root.useAnim ? 0 : Appearance.animation.durations.small
                     easing.type: Easing.BezierSpline
@@ -107,6 +109,7 @@ Slider {
         color: Appearance.colors.colPrimary
 
         Behavior on x {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: !root.useAnim ? 0 : Appearance.animation.elementMoveFast.duration
                 easing.type: Appearance.animation.elementMoveFast.type

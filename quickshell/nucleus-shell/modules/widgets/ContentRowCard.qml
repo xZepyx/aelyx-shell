@@ -23,6 +23,7 @@ Item {
         anchors.right: parent.right
         implicitHeight: contentArea.implicitHeight + baseCard.verticalPadding
         Behavior on implicitHeight {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: Appearance.animation.durations.small
                 easing.type: Easing.InOutExpo
@@ -30,6 +31,7 @@ Item {
         }
         color: Appearance.m3colors.m3surfaceContainerLow
         Behavior on color {
+            enabled: Config.runtime.appearance.animations.enabled
             ColorAnimation {
                 duration: Appearance.animation.durations.small
                 easing.type: Easing.InOutExpo

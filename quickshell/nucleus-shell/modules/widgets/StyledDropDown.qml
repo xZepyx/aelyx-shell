@@ -27,9 +27,11 @@ Item {
         radius: Appearance.rounding.unsharpen
 
         Behavior on border.color {
+            enabled: Config.runtime.appearance.animations.enabled
             ColorAnimation { duration: Appearance.animation.durations.small; easing.type: Easing.InOutCubic }
         }
         Behavior on border.width {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation { duration: Appearance.animation.durations.small; easing.type: Easing.InOutCubic }
         }
 
@@ -47,6 +49,7 @@ Item {
                 opacity: mouseArea.pressed ? 0.12 : mouseArea.containsMouse ? 0.08 : 0
 
                 Behavior on opacity {
+                    enabled: Config.runtime.appearance.animations.enabled
                     NumberAnimation { duration: Appearance.animation.durations.small; easing.type: Easing.InOutCubic }
                 }
             }
@@ -161,12 +164,12 @@ Item {
             }
 
             enter: Transition {
-                NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; duration: Appearance.animation.durations.small; easing.type: Easing.InOutCubic }
-                NumberAnimation { property: "scale"; from: 0.9; to: 1.0; duration: Appearance.animation.durations.small; easing.type: Easing.InOutCubic }
+                NumberAnimation { running: Config.runtime.appearance.animations.enabled; property: "opacity"; from: 0.0; to: 1.0; duration: Appearance.animation.durations.small; easing.type: Easing.InOutCubic }
+                NumberAnimation { running: Config.runtime.appearance.animations.enabled; property: "scale"; from: 0.9; to: 1.0; duration: Appearance.animation.durations.small; easing.type: Easing.InOutCubic }
             }
 
             exit: Transition {
-                NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; duration: Appearance.animation.fast * 0.67; easing.type: Easing.InOutCubic }
+                NumberAnimation { running: Config.runtime.appearance.animations.enabled; property: "opacity"; from: 1.0; to: 0.0; duration: Appearance.animation.fast * 0.67; easing.type: Easing.InOutCubic }
             }
         }
     }

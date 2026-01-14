@@ -134,18 +134,22 @@ Scope {
                 }
 
                 Behavior on bottomLeftRadius {
+                    enabled: Config.runtime.appearance.animations.enabled
                     animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
                 }
 
                 Behavior on topLeftRadius {
+                    enabled: Config.runtime.appearance.animations.enabled
                     animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
                 }
 
                 Behavior on bottomRightRadius {
+                    enabled: Config.runtime.appearance.animations.enabled
                     animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
                 }
 
                 Behavior on topRightRadius {
+                    enabled: Config.runtime.appearance.animations.enabled
                     animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
                 }
 

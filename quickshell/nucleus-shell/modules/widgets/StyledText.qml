@@ -21,6 +21,7 @@ Text {
   font.pixelSize: Appearance.font.size.normal
 
   Behavior on color {
+    enabled: Config.runtime.appearance.animations.enabled
     ColorAnimation {
       duration: Appearance.animation.durations.small
       easing.type: Easing.BezierSpline
@@ -29,8 +30,8 @@ Text {
   }
 
   Behavior on text {
-    enabled: root.animate
-
+    enabled: Config.runtime.appearance.animations.enabled && root.animate 
+    
     SequentialAnimation {
       Anim {
         to: root.animateFrom

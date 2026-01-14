@@ -350,6 +350,7 @@ Item {
 
     // Fade animation when launcher opens/closes
     Behavior on opacity {
+        enabled: Config.runtime.appearance.animations.enabled
         NumberAnimation {
             duration: 400
             easing.type: Easing.BezierSpline

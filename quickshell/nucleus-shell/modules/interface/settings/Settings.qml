@@ -134,6 +134,7 @@ Scope {
                                 opacity: root.sidebarCollapsed ? 0 : 1
 
                                 Behavior on opacity {
+                                    enabled: Config.runtime.appearance.animations.enabled
                                     NumberAnimation {
                                         duration: Appearance.animation.durations.small
                                     }
@@ -264,6 +265,7 @@ Scope {
                                             opacity: root.sidebarCollapsed ? 0 : 1
 
                                             Behavior on opacity {
+                                                enabled: Config.runtime.appearance.animations.enabled
                                                 NumberAnimation {
                                                     duration: Appearance.animation.durations.small
                                                 }
@@ -295,6 +297,7 @@ Scope {
                     }
 
                     Behavior on width {
+                        enabled: Config.runtime.appearance.animations.enabled
                         NumberAnimation {
                             duration: Appearance.animation.durations.normal
                             easing.type: Easing.InOutCubic

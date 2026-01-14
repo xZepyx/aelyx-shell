@@ -298,4 +298,16 @@ ContentMenu {
             step: 0.1
         }
     }
+    ContentCard {
+        StyledText {
+            text: "Animations"
+            font.pixelSize: 20
+            font.bold: true
+        }
+        StyledSwitchOption {
+            title: "Enabled"
+            description: "Whether to enable or disable animations (applies everywhere in the shell)."
+            prefField: "appearance.animations.enabled"
+        }
+    }
 }

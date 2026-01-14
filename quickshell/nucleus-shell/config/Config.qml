@@ -96,6 +96,9 @@ Singleton {
             property JsonObject appearance: JsonObject {
                 property string theme: "dark"
                 property bool tintIcons: false
+                property JsonObject animations: JsonObject {
+                    property bool enabled: true;
+                }
                 property JsonObject rounding: JsonObject {
                     property double factor: 0.6 // 0 to 1
                 }

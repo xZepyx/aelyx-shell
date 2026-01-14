@@ -131,6 +131,7 @@ Item {
             }
 
             Behavior on animatedX1 {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: 400
                     easing.type: Easing.OutSine
@@ -139,6 +140,7 @@ Item {
             }
 
             Behavior on animatedX2 {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: 400 / 3 // One side moves faster to create stretch
                     easing.type: Easing.OutSine

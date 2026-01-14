@@ -76,7 +76,7 @@ Item {
                 to: 360
                 duration: 4000
                 loops: Animation.Infinite
-                running: Mpris.isPlaying
+                running: Mpris.isPlaying && Config.runtime.appearance.animations.enabled
             }
 
         }

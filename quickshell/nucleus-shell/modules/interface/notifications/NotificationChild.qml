@@ -22,6 +22,7 @@ Rectangle {
 
     opacity: tracked ? 1 : (startAnim ? 1 : 0)
     Behavior on opacity {
+        enabled: Config.runtime.appearance.animations.enabled
         NumberAnimation {
             duration: Appearance.animation.durations.small
             easing.type: Easing.InOutExpo
@@ -35,6 +36,7 @@ Rectangle {
     property bool clicked: mouseHandler.containsPress
     color: hovered ? (clicked ? Appearance.m3colors.m3surfaceContainerHigh : Appearance.m3colors.m3surfaceContainerLow) : Appearance.m3colors.m3surface
     Behavior on color {
+        enabled: Config.runtime.appearance.animations.enabled
         ColorAnimation {
             duration: Appearance.animation.durations.small
             easing.type: Easing.InOutExpo

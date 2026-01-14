@@ -63,6 +63,7 @@ Scope {
                 }
 
                 Behavior on height {
+                    enabled: Config.runtime.appearance.animations.enabled
                     NumberAnimation {
                         duration: Appearance.animation.durations.small
                         easing.type: Easing.InOutExpo
@@ -118,6 +119,7 @@ Scope {
                         })
 
                         Behavior on y {
+                            enabled: Config.runtime.appearance.animations.enabled
                             NumberAnimation {
                                 duration: Appearance.animation.durations.normal
                                 easing.type: Easing.InOutExpo

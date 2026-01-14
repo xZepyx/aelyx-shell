@@ -43,6 +43,7 @@ PanelWindow {
             }
 
             Behavior on opacity {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: Appearance.animation.durations.large
                     easing.type: Easing.InOutExpo

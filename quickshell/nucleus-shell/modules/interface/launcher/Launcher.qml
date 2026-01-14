@@ -122,6 +122,7 @@ PanelWindow {
             }
 
             Behavior on bottomLeftRadius {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: 100
                     easing.type: Easing.BezierSpline
@@ -130,6 +131,7 @@ PanelWindow {
             }
 
             Behavior on bottomRightRadius {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: 100
                     easing.type: Easing.BezierSpline
@@ -173,6 +175,7 @@ PanelWindow {
             }
 
             Behavior on topLeftRadius {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: 100
                     easing.type: Easing.BezierSpline
@@ -181,6 +184,7 @@ PanelWindow {
             }
 
             Behavior on topRightRadius {
+                enabled: Config.runtime.appearance.animations.enabled
                 NumberAnimation {
                     duration: 100
                     easing.type: Easing.BezierSpline
@@ -189,6 +193,7 @@ PanelWindow {
             }
 
             Behavior on implicitHeight {
+                enabled: Config.runtime.appearance.animations.enabled
                 animation: Appearance.animation.elementMove.numberAnimation.createObject(this)
             }
 

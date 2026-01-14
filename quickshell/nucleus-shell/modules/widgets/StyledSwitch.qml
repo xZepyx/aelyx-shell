@@ -18,10 +18,11 @@ Item {
     property color iconColor: Appearance.colors.colPrimary
 
     // Dimensions
-    property int trackRadius: height / 2
+    property int trackRadius: (height / 2) * Config.runtime.appearance.rounding.factor
     property int thumbSize: height - (checked ? 12 : 18)
     Behavior on thumbSize { 
-        NumberAnimation { 
+        enabled: Config.runtime.appearance.animations.enabled
+        NumberAnimation {
             duration: Appearance.animation.durations.normal
             easing.type: Easing.BezierSpline
             easing.bezierCurve: Appearance.animation.curves.expressiveEffects
@@ -35,7 +36,8 @@ Item {
         color: root.checked ? trackOn : trackOff
         border.width: root.checked ? 0 : 2
         border.color: Appearance.colors.colOutline
-        Behavior on color { 
+        Behavior on color {
+            enabled: Config.runtime.appearance.animations.enabled
             ColorAnimation { 
                 duration: Appearance.animation.durations.normal
                 easing.type: Easing.BezierSpline
@@ -48,19 +50,21 @@ Item {
         id: thumb
         width: thumbSize
         height: thumbSize
-        radius: thumbSize / 2
+        radius: (thumbSize / 2) * Config.runtime.appearance.rounding.factor
         anchors.verticalCenter: parent.verticalCenter
         x: root.checked ? parent.width - width - 6 : 9
         color: root.checked ? thumbColorOn : thumbColorOff
 
-        Behavior on x { 
+        Behavior on x {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation { 
                 duration: Appearance.animation.durations.small
                 easing.type: Easing.BezierSpline
                 easing.bezierCurve: Appearance.animation.curves.expressiveEffects
             } 
         }
-        Behavior on color { 
+        Behavior on color {
+            enabled: Config.runtime.appearance.animations.enabled
             ColorAnimation { 
                 duration: Appearance.animation.durations.small
                 easing.type: Easing.BezierSpline
@@ -68,6 +72,7 @@ Item {
             } 
         }
     }
+
 
     MouseArea {
         anchors.fill: parent

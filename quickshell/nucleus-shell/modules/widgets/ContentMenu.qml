@@ -12,12 +12,14 @@ Item {
     scale: visible ? 1 : 0.95
 
     Behavior on opacity {
+        enabled: Config.runtime.appearance.animations.enabled
         NumberAnimation {
             duration: Appearance.animation.durations.normal
             easing.type: Appearance.animation.curves.standard[0] // using standard easing
         }
     }
     Behavior on scale {
+        enabled: Config.runtime.appearance.animations.enabled
         NumberAnimation {
             duration: Appearance.animation.durations.normal
             easing.type: Appearance.animation.curves.standard[0]

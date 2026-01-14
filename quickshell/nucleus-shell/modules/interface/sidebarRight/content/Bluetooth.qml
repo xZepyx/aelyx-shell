@@ -9,7 +9,7 @@ StyledRect {
     id: root
     width: 200
     height: 80
-    radius: Appearance.rounding.verylarge + 5
+    radius: Appearance.rounding.verylarge
     color: Appearance.m3colors.m3surfaceContainerHigh
 
     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter

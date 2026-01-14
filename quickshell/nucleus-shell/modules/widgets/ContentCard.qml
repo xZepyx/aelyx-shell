@@ -24,6 +24,7 @@ Item {
 
         // Animate implicitHeight using Appearance animation
         Behavior on implicitHeight {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: !contentCard.useAnims ? 0 : Appearance.animation.durations.fast
                 easing.type: Easing.BezierSpline
@@ -33,6 +34,7 @@ Item {
 
         color: Appearance.colors.colLayer1
         Behavior on color {
+            enabled: Config.runtime.appearance.animations.enabled
             ColorAnimation {
                 duration: !contentCard.useAnims ? 0 : Appearance.animation.durations.fast
                 easing.type: Easing.BezierSpline

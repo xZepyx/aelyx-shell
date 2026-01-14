@@ -73,6 +73,7 @@ ContentMenu {
                     anchors.centerIn: parent
 
                     Behavior on opacity {
+                        enabled: Config.runtime.appearance.animations.enabled
                         Anim {
                         }
 
@@ -88,6 +89,7 @@ ContentMenu {
                     cache: true
 
                     Behavior on opacity {
+                        enabled: Config.runtime.appearance.animations.enabled
                         Anim {
                         }
 

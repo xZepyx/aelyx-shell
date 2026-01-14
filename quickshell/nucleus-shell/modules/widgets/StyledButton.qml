@@ -67,6 +67,7 @@ Control {
                 color: root.text_color
                 anchors.verticalCenter: parent.verticalCenter
                 Behavior on color {
+                    enabled: Config.runtime.appearance.animations.enabled
                     ColorAnimation {
                         duration: Appearance.animation.durations.normal / 2
                         easing.type: Easing.BezierSpline
@@ -81,6 +82,7 @@ Control {
                 anchors.verticalCenter: parent.verticalCenter
                 elide: Text.ElideRight
                 Behavior on color {
+                    enabled: Config.runtime.appearance.animations.enabled
                     ColorAnimation {
                         duration: Appearance.animation.durations.normal / 2
                         easing.type: Easing.BezierSpline
@@ -96,6 +98,7 @@ Control {
         radius: Appearance.rounding.normal
         color: root.background_color
         Behavior on color {
+            enabled: Config.runtime.appearance.animations.enabled
             ColorAnimation {
                 duration: Appearance.animation.durations.normal / 2
                 easing.type: Easing.BezierSpline
@@ -103,6 +106,7 @@ Control {
             }
         }
         Behavior on radius {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: Appearance.animation.durations.normal / 2
                 easing.type: Easing.BezierSpline
@@ -110,6 +114,7 @@ Control {
             }
         }
         Behavior on topLeftRadius {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: Appearance.animation.durations.large
                 easing.type: Easing.BezierSpline
@@ -117,6 +122,7 @@ Control {
             }
         }
         Behavior on topRightRadius {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: Appearance.animation.durations.large
                 easing.type: Easing.BezierSpline
@@ -124,6 +130,7 @@ Control {
             }
         }
         Behavior on bottomLeftRadius {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: Appearance.animation.durations.large
                 easing.type: Easing.BezierSpline
@@ -131,6 +138,7 @@ Control {
             }
         }
         Behavior on bottomRightRadius {
+            enabled: Config.runtime.appearance.animations.enabled
             NumberAnimation {
                 duration: Appearance.animation.durations.large
                 easing.type: Easing.BezierSpline

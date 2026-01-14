@@ -123,6 +123,7 @@ PanelWindow {
             }
 
             component Anim: NumberAnimation {
+                running: Config.runtime.appearance.animations.enabled
                 duration: 400
                 easing.type: Easing.BezierSpline
                 easing.bezierCurve: Appearance.animation.curves.standard
